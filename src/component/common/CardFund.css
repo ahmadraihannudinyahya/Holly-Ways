@@ -1,0 +1,31 @@
+.cardfund {
+  width: 330px;
+  height: 466px;
+  background-color: #fff;
+}
+
+.cardfund > h3 {
+  margin: 18px 23px;
+}
+.cardfund > p {
+  margin: 0 23px;
+  color: #616161;
+}
+
+.cardfund > div:nth-child(4) {
+  margin: 40px 23px;
+  display: flex;
+  justify-content: space-between;
+}
+.cardfund > div:nth-child(4) > div > p {
+  font-weight: 800px;
+}
+
+.cardfund > div:nth-child(4) > div > button {
+  border: none;
+  border-radius: 10px;
+  background-color: #c32424;
+  font-weight: 900;
+  padding: 6px 25px;
+  color: #fff;
+}

@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.listfund {
+  padding-top: 50px;
+  background-color: #e5e5e5;
+  padding-bottom: 30px;
+}
+
+.listfund > h2 {
+  font-weight: 700;
+  font-size: 36px;
+  color: #c32424;
+  text-align: center;
+  margin: 10px;
+}
+.listcontainer {
+  padding-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+}

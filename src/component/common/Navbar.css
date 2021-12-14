@@ -1,0 +1,23 @@
+.navbar {
+  padding: 19px 100px 19px 100px;
+  background-color: #c32424;
+  display: flex;
+  justify-content: space-between;
+}
+
+#register {
+  background-color: #e8e8e8;
+  color: #c32424;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 22px;
+  font-weight: 900;
+}
+
+#login {
+  font-weight: 900;
+  color: #e8e8e8;
+  background-color: transparent;
+  border: none;
+  padding: 10px 22px;
+}
