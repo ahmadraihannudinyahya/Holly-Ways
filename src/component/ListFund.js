@@ -1,4 +1,4 @@
-import CardFund from './CardFund';
+import CardFund from './common/CardFund';
 import './ListFund.css'
 
 function ListFund (){

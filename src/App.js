@@ -1,13 +1,9 @@
-import ListFund from "./component/common/ListFund";
-import Navbar from "./component/common/Navbar";
-import Landing from "./component/Landing";
+import Main from "./component/pages/Main";
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
-      <Landing />
-      <ListFund />
+      <Main />
     </div>
   );
 }
