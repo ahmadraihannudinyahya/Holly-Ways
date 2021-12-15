@@ -1,0 +1,11 @@
+.progres-container {
+  height: 5px;
+  width: 100%;
+  background-color: #c4c4c4;
+  border-radius: 50px;
+}
+.progres {
+  height: 5px;
+  background-color: #c32424;
+  border-radius: 50px;
+}

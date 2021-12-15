@@ -1,0 +1,19 @@
+.donorcolomn {
+  margin-bottom: 10px;
+  background-color: #fff;
+  padding: 15px;
+}
+
+.donorcolomn > h3 {
+  margin-bottom: 9px;
+  font-size: 14px;
+}
+.donorcolomn > p:nth-child(2) {
+  margin-bottom: 10px;
+  font-size: 9px;
+}
+.donorcolomn > p:nth-child(3) {
+  margin: 5px 0;
+  color: #974a4a;
+  font-size: 10px;
+}

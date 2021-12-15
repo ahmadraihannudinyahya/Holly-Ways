@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.funddetail {
+  padding: 50px 200px;
+  background-color: #e5e5e5;
+}
+.funddetail > div:first-child {
+  display: flex;
+  gap: 50px;
+}
+
+.funddetail > div:first-child > div:first-child {
+  width: 60%;
+  padding-bottom: 30px;
+}
+.funddetail > div:first-child > div:first-child > img {
+  height: 550px;
+  width: 550px;
+  object-fit: cover;
+}
+.funddetail > div:first-child > div:nth-child(2) {
+  width: 40%;
+}
+.funddetail > div:first-child > div:nth-child(2) > h2 {
+  font-weight: 700;
+  font-size: 36px;
+  margin-bottom: 45px;
+}
+.funddetail > div:first-child > div:nth-child(2) > div:nth-child(2) {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+.funddetail
+  > div:first-child
+  > div:nth-child(2)
+  > div:nth-child(2)
+  > p:first-child {
+  color: #c32424;
+  font-weight: 700;
+  font-size: 18px;
+}
+.funddetail
+  > div:first-child
+  > div:nth-child(2)
+  > div:nth-child(2)
+  > p:nth-child(2) {
+  font-weight: 400;
+  font-size: 14px;
+  color: #616161;
+}
+.funddetail
+  > div:first-child
+  > div:nth-child(2)
+  > div:nth-child(2)
+  > p:nth-child(3) {
+  color: #616161;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.funddetail > div:first-child > div:nth-child(2) > div:nth-child(4) {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 17px;
+}
+.funddetail > div:first-child > div:nth-child(2) > div:nth-child(4) > p {
+  color: #616161;
+}
+.funddetail > div:first-child > div:nth-child(2) > div:nth-child(4) > p > b {
+  color: #000;
+}
+.funddetail > div:first-child > div:nth-child(2) > p {
+  margin-top: 35px;
+  color: #616161;
+  margin-bottom: 40px;
+}
+.funddetail > div:first-child > div:nth-child(2) > button {
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  background-color: #c32424;
+  padding: 10px;
+  color: #fff;
+  font-weight: 900;
+  font-size: 18px;
+}
+
+.donorfunds {
+  padding-top: 30px;
+}
+
+.donorfunds > h2 {
+  font-size: 36px;
+  font-weight: 700;
+}
+.donorfunds > div:nth-child(2) {
+  margin-top: 30px;
+}
+.donorfunds > div:nth-child(2) > p {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 400;
+  color: #616161;
+  margin: 10px;
+}
