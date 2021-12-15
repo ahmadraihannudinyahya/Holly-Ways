@@ -1,4 +1,5 @@
 import './CardFund.css'
+import Progress from './Progress';
 
 function CardFund(){
   return(
@@ -6,6 +7,9 @@ function CardFund(){
       <img src="/image/Rectangle7.png" alt="Bocah" />
       <h3>The Strength of a People. Power of Community</h3>
       <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+      <div>
+        <Progress />
+      </div>
       <div>
         <div>
           <p>Rp. 25.000.000</p>
