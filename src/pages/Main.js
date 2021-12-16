@@ -10,13 +10,14 @@ class Main extends Component{
     super(props);
     this.props = props;
     this.state = {
-      isLogin : true,
+      isLogin : false,
       modalLoginStatus : false,
       modalRegisterStatus : false,
     }
     this.handleShowModal = this.handleShowModal.bind(this);
     this.handleOffModal = this.handleOffModal.bind(this);
     this.handleToDetailPage = this.handleToDetailPage.bind(this);
+    this.handleClickDonate = this.handleClickDonate.bind(this);
   }
   handleShowModal(e){
     if(e.target.id ==='login'){
@@ -42,6 +43,15 @@ class Main extends Component{
     }else{
       this.setState({modalLoginStatus : true})
     }
+  }
+  
+  handleClickDonate(){
+    if(this.state.isLogin){
+      this.props.location.hash = '#listfund'
+    }else{
+      this.setState({modalLoginStatus : true})
+    }
+    console.log(this.props);
   }
 
   fetchFundlistServices(){
@@ -74,7 +84,7 @@ class Main extends Component{
     return (
       <>
         <Navbar handleShowModal = {this.handleShowModal} isLogin={this.state.isLogin}/>
-        <Landing handleShowModal = {this.handleShowModal}/>
+        <Landing handleClickDonate = {this.handleClickDonate}/>
         <ListFund fetchFundlistServices = {this.fetchFundlistServices} handleToDetailPage= {this.handleToDetailPage}/>
         {this.state.modalLoginStatus ? <LoginModal handleOffModal= {this.handleOffModal} />: ''}
         {this.state.modalRegisterStatus ? <RegisterModal handleOffModal= {this.handleOffModal} />: ''}

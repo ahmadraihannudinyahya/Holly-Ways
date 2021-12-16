@@ -16,7 +16,7 @@ class ListFund extends Component{
   }
   render() {
     return (
-      <div className="listfund">
+      <div className="listfund" id='listfund'>
       <h2>Donate Now</h2>
       <div className="listcontainer">
         {this.state.fundList.map( fund => <CardFund key={fund.id} fund={fund} handleToDetailPage={this.handleToDetailPage}/> )}
