@@ -6,9 +6,11 @@
 
 .cardfund > h3 {
   margin: 18px 23px;
+  height: 56px;
 }
 .cardfund > p {
   margin: 0 23px;
+  height: 38px;
   color: #616161;
 }
 .cardfund > div:nth-child(4) {
