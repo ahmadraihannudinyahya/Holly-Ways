@@ -2,9 +2,13 @@ import './LoginModal.css'
 import { Component } from 'react'
 
 class LoginModal extends Component{
+  constructor(props){
+    super(props);
+    this.handleOffModal= props.handleOffModal;
+  }
   render(){
     return (
-    <div className="modalBackdrop" onClick={this.handleRemove}>
+    <div className="modalBackdrop" id="modalLogin" onClick={this.handleOffModal}>
         <div className="modal">
           <form action="">
             <h1>Login</h1>

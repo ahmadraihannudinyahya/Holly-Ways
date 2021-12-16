@@ -1,13 +1,14 @@
 import './Landing.css'
 
-function Landing(){
+function Landing(props){
+  const {handleShowModal} = props
   return (
     <div className="landing">
       <div>
         <div>
           <h1>While you are still standing, try to reach out to the people who are falling.</h1>
           <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
-          <button>Donate Now</button>
+          <button id='login' onClick={handleShowModal}>Donate Now</button>
         </div>
         <div>
           <img src="/image/13405547181.png" alt="banjir" />
