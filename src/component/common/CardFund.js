@@ -1,18 +1,19 @@
 import './CardFund.css'
 import Progress from './Progress';
 
-function CardFund(){
+function CardFund(props){
+  const {id , title, goal_donations, descriton, progres, thumbnail} = props.fund;
   return(
     <div className="cardfund">
-      <img src="/image/Rectangle7.png" alt="Bocah" />
-      <h3>The Strength of a People. Power of Community</h3>
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+      <img src={thumbnail} alt={title} />
+      <h3>{title}</h3>
+      <p>{descriton}</p>
       <div>
-        <Progress />
+        <Progress value = {progres}/>
       </div>
       <div>
         <div>
-          <p>Rp. 25.000.000</p>
+          <p>{goal_donations}</p>
         </div>
         <div>
           <button>Donate</button>
