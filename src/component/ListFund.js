@@ -8,6 +8,7 @@ class ListFund extends Component{
     super(props);
     this.state = {fundList : []}
     this.fetchFundlistServices = props.fetchFundlistServices;
+    this.handleToDetailPage = props.handleToDetailPage;
   }
   componentDidMount(){
     const fundList = this.fetchFundlistServices()
@@ -18,7 +19,7 @@ class ListFund extends Component{
       <div className="listfund">
       <h2>Donate Now</h2>
       <div className="listcontainer">
-        {this.state.fundList.map( fund => <CardFund key={fund.id} fund={fund}/> )}
+        {this.state.fundList.map( fund => <CardFund key={fund.id} fund={fund} handleToDetailPage={this.handleToDetailPage}/> )}
       </div>
     </div>
     );

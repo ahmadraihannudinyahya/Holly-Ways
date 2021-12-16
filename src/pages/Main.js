@@ -6,14 +6,17 @@ import Landing from "../component/Landing"
 import ListFund from "../component/ListFund"
 
 class Main extends Component{
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
+    this.props = props;
     this.state = {
+      isLogin : false,
       modalLoginStatus : false,
       modalRegisterStatus : false,
     }
     this.handleShowModal = this.handleShowModal.bind(this);
     this.handleOffModal = this.handleOffModal.bind(this);
+    this.handleToDetailPage = this.handleToDetailPage.bind(this);
   }
   handleShowModal(e){
     if(e.target.id ==='login'){
@@ -31,6 +34,16 @@ class Main extends Component{
       this.setState({modalRegisterStatus : false})
     }
   }
+
+  handleToDetailPage(e){
+    const link =`/fund/${e.target.id}`;
+    if(this.state.isLogin){
+      this.props.history.push(link);
+    }else{
+      this.setState({modalLoginStatus : true})
+    }
+  }
+
   fetchFundlistServices(){
     return [
       {
@@ -62,7 +75,7 @@ class Main extends Component{
       <>
         <Navbar handleShowModal = {this.handleShowModal}/>
         <Landing handleShowModal = {this.handleShowModal}/>
-        <ListFund fetchFundlistServices = {this.fetchFundlistServices}/>
+        <ListFund fetchFundlistServices = {this.fetchFundlistServices} handleToDetailPage= {this.handleToDetailPage}/>
         {this.state.modalLoginStatus ? <LoginModal handleOffModal= {this.handleOffModal} />: ''}
         {this.state.modalRegisterStatus ? <RegisterModal handleOffModal= {this.handleOffModal} />: ''}
       </>
