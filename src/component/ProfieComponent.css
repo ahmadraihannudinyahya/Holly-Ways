@@ -1,0 +1,53 @@
+.ProfieComponent {
+  background-color: #e5e5e5;
+  padding: 79px 197px;
+  display: flex;
+  min-height: 100vh;
+}
+.ProfieComponent > .myprofile {
+  width: 50%;
+}
+.ProfieComponent > .myprofile > h2 {
+  margin-bottom: 30px;
+  font-size: 36px;
+  font-weight: 700;
+}
+.ProfieComponent > .myprofile > div {
+  display: flex;
+  gap: 28px;
+}
+.ProfieComponent > .myprofile > div > div:first-child > img {
+  height: 221.79px;
+  width: 190;
+  object-fit: cover;
+  border-radius: 5px;
+}
+.ProfieComponent > .myprofile > div > div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 10px;
+}
+.ProfieComponent > .myprofile > div > div:nth-child(2) > div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.ProfieComponent > .myprofile > div > div:nth-child(2) > div > h4 {
+  color: #c32424;
+  font-size: 18px;
+  font-weight: 700;
+}
+.ProfieComponent > .myprofile > div > div:nth-child(2) > div > p {
+  color: #616161;
+  font-size: 18px;
+  font-weight: 400;
+}
+.ProfieComponent > .historydonation {
+  width: 50%;
+}
+.ProfieComponent > .historydonation > h2 {
+  margin-bottom: 30px;
+  font-size: 36px;
+  font-weight: 700;
+}
