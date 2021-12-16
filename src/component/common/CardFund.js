@@ -1,8 +1,9 @@
 import './CardFund.css'
 import Progress from './Progress';
-
+import {Link} from 'react-router-dom'
 function CardFund(props){
   const {id , title, goal_donations, descriton, progres, thumbnail} = props.fund;
+  const link = `/fund/${id}`
   return(
     <div className="cardfund">
       <img src={thumbnail} alt={title} />
@@ -16,7 +17,7 @@ function CardFund(props){
           <p>{goal_donations}</p>
         </div>
         <div>
-          <button>Donate</button>
+          <Link to={link} ><button>Donate</button></Link>
         </div>
       </div>
     </div>

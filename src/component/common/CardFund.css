@@ -23,7 +23,7 @@
   font-weight: 800px;
 }
 
-.cardfund > div:nth-child(5) > div > button {
+.cardfund > div:nth-child(5) > div:nth-child(2) button {
   border: none;
   border-radius: 10px;
   background-color: #c32424;

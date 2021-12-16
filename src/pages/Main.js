@@ -1,5 +1,4 @@
 import { Component } from "react"
-import { unmountComponentAtNode, render} from "react-dom"
 import RegisterModal from "../component/common/RegisterModal"
 import LoginModal from "../component/common/LoginModal"
 import Navbar from "../component/common/Navbar"
