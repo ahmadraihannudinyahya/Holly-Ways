@@ -10,7 +10,7 @@ class Main extends Component{
     super(props);
     this.props = props;
     this.state = {
-      isLogin : false,
+      isLogin : true,
       modalLoginStatus : false,
       modalRegisterStatus : false,
     }
@@ -73,7 +73,7 @@ class Main extends Component{
   render(){
     return (
       <>
-        <Navbar handleShowModal = {this.handleShowModal}/>
+        <Navbar handleShowModal = {this.handleShowModal} isLogin={this.state.isLogin}/>
         <Landing handleShowModal = {this.handleShowModal}/>
         <ListFund fetchFundlistServices = {this.fetchFundlistServices} handleToDetailPage= {this.handleToDetailPage}/>
         {this.state.modalLoginStatus ? <LoginModal handleOffModal= {this.handleOffModal} />: ''}
