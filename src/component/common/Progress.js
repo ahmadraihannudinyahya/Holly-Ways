@@ -1,13 +1,13 @@
 import React from 'react';
 import './Progress.css'
 
-class Progress extends React.Component{
-  render(){
-    return(
-      <div className="progres-container">
-        <div className="progres" style={{width : '50%'}}></div>
-      </div>
-    )
-  }
+function Progress(props){
+  const {value} = props;
+  const width = `${value}%`
+  return(
+    <div className="progres-container">
+      <div className="progres" style={{width}}></div>
+    </div>
+  )
 }
 export default Progress;
