@@ -1,15 +1,22 @@
+import { Component } from 'react'
 import './Navbar.css'
 
-function Navbar(){
-  return (
+class Navbar extends Component{
+  constructor(props){
+    super(props);
+    this.handleLogin = props.handleLogin;
+  }
+  render(){
+    return (
     <div className="navbar">
-      <img src="/Icon.png" alt="icon" />
-      <div>
-        <button id="login">Login</button>
-        <button id="register">Register</button>
+        <img src="/Icon.png" alt="icon" />
+        <div>
+          <button id="login" onClick={this.handleLogin}>Login</button>
+          <button id="register">Register</button>
+        </div>
       </div>
-    </div>
-  )
+    )
+  }
 }
 
 export default Navbar
