@@ -29,16 +29,16 @@ class App extends Component {
   render() {
     return (
       <>
-        <Navbar handleTogleModalLogin= {this.handleTogleModalLogin} handleTogleModalRegister={this.handleTogleModalRegister} isLogin={this.state.isLogin}/>
         <Router>
-          <Switch>
-            <Route path="/profile/:id" component={Profile} />
-            <Route path="/fund/:id" component={Detail} />
-            <Route path="/" component={Main} />
-          </Switch>
+          <Navbar handleTogleModalLogin= {this.handleTogleModalLogin} handleTogleModalRegister={this.handleTogleModalRegister} isLogin={this.state.isLogin}/>
+            <Switch>
+              <Route path="/profile/:id" component={Profile} />
+              <Route path="/fund/:id" component={Detail} />
+              <Route path="/" component={Main} />
+            </Switch>
+          {this.state.modalLoginStatus ? <LoginModal handleTogleModal= {this.handleTogleModalLogin}/> : <></>}
+          {this.state.modalRegisterStatus ? <RegisterModal handleTogleModal = {this.handleTogleModalRegister}/> : <></>}
         </Router>
-        {this.state.modalLoginStatus ? <LoginModal handleTogleModal= {this.handleTogleModalLogin}/> : <></>}
-        {this.state.modalRegisterStatus ? <RegisterModal handleTogleModal = {this.handleTogleModalRegister}/> : <></>}
       </>
     );
   }
