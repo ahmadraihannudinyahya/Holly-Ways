@@ -32,7 +32,7 @@ class App extends Component {
         <Router>
           <Navbar handleTogleModalLogin= {this.handleTogleModalLogin} handleTogleModalRegister={this.handleTogleModalRegister} isLogin={this.state.isLogin}/>
             <Switch>
-              <Route path="/profile/:id" component={Profile} />
+              <Route path="/profile" component={Profile} />
               <Route path="/fund/:id" component={Detail} />
               <Route path="/" component={Main} />
             </Switch>
