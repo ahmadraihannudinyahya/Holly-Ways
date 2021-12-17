@@ -2,9 +2,14 @@ import './DonateModal.css'
 
 function DonateModal(props){
   const {handleTogleDonateModal} = props;
+  const handleOffModal = e =>{
+    if(e.target.classList.contains('donatemodalbackdrop')){
+      handleTogleDonateModal(e);
+    }
+  }
   return (
-   <div className="donatemodalbackdrop" onClick={handleTogleDonateModal}>
-     <div className="donatemodal">
+   <div className="donatemodalbackdrop" tabIndex='-1' onClick={handleOffModal}>
+     <div className="modal">
         <input type="number" placeholder="Nominal Donation"/>
         <div>
           <div>

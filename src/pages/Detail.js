@@ -8,7 +8,7 @@ function Detail(){
     donateModalStatus : false
   });
 
-  const handleTogleDonateModal = ()=>{
+  const handleTogleDonateModal = () => {
     setState(prevState => ({donateModalStatus : !prevState.donateModalStatus}));
   }
   return(
