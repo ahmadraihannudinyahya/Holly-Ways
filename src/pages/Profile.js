@@ -3,10 +3,7 @@ import ProfileComponent from "../component/ProfieComponent";
 
 function Profile(){
   return(
-    <>
-      <Navbar />
       <ProfileComponent />
-    </>
   )
 }
 

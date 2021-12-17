@@ -3,10 +3,7 @@ import FundDetail from "../component/FundDetail";
 
 function Detail(){
   return(
-    <>
-      <Navbar />
       <FundDetail />
-    </>
   )
 }
 

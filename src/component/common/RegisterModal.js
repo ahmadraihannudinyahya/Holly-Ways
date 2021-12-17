@@ -5,11 +5,11 @@ import './RegisterModal.css'
 class RegisterModal extends Component{
   constructor(props){
     super(props);
-    this.handleOffModal = props.handleOffModal;
+    this.handleTogleModal = props.handleTogleModal;
   }
   render(){
     return(
-      <div className="modalBackdrop" id="modalRegister" onClick={this.handleOffModal}>
+      <div className="modalBackdrop" id="modalRegister" onClick={this.handleTogleModal}>
         <div className="modal">
           <form action="">
             <h1>Register</h1>

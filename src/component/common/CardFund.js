@@ -1,6 +1,5 @@
 import './CardFund.css'
 import Progress from './Progress';
-import {Link} from 'react-router-dom'
 function CardFund(props){
   const {id , title, goal_donations, descriton, progres, thumbnail} = props.fund;
   const {handleToDetailPage} = props;

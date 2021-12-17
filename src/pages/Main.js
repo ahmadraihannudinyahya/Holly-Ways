@@ -1,7 +1,5 @@
 import { Component } from "react"
-import RegisterModal from "../component/common/RegisterModal"
-import LoginModal from "../component/common/LoginModal"
-import Navbar from "../component/common/Navbar"
+
 import Landing from "../component/Landing"
 import ListFund from "../component/ListFund"
 
@@ -9,31 +7,8 @@ class Main extends Component{
   constructor(props){
     super(props);
     this.props = props;
-    this.state = {
-      isLogin : false,
-      modalLoginStatus : false,
-      modalRegisterStatus : false,
-    }
-    this.handleShowModal = this.handleShowModal.bind(this);
-    this.handleOffModal = this.handleOffModal.bind(this);
     this.handleToDetailPage = this.handleToDetailPage.bind(this);
     this.handleClickDonate = this.handleClickDonate.bind(this);
-  }
-  handleShowModal(e){
-    if(e.target.id ==='login'){
-      this.setState({modalLoginStatus : true})
-    }else{
-      this.setState({modalRegisterStatus : true})
-    }
-  }
-
-  handleOffModal(e){
-    if(e.target.id ==='modalLogin'){
-      this.setState({modalLoginStatus : false})
-    }
-    else{
-      this.setState({modalRegisterStatus : false})
-    }
   }
 
   handleToDetailPage(e){
@@ -49,9 +24,7 @@ class Main extends Component{
     if(this.state.isLogin){
       this.props.location.hash = '#listfund'
     }else{
-      this.setState({modalLoginStatus : true})
     }
-    console.log(this.props);
   }
 
   fetchFundlistServices(){
@@ -83,11 +56,8 @@ class Main extends Component{
   render(){
     return (
       <>
-        <Navbar handleShowModal = {this.handleShowModal} isLogin={this.state.isLogin}/>
         <Landing handleClickDonate = {this.handleClickDonate}/>
         <ListFund fetchFundlistServices = {this.fetchFundlistServices} handleToDetailPage= {this.handleToDetailPage}/>
-        {this.state.modalLoginStatus ? <LoginModal handleOffModal= {this.handleOffModal} />: ''}
-        {this.state.modalRegisterStatus ? <RegisterModal handleOffModal= {this.handleOffModal} />: ''}
       </>
     )
   }

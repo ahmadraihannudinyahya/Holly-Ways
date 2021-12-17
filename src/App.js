@@ -1,18 +1,47 @@
 import Main from "./pages/Main";
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import { Component } from "react";
 import Detail from "./pages/Detail";
 import Profile from "./pages/Profile";
+import Navbar from "./component/common/Navbar";
+import LoginModal from "./component/common/LoginModal";
+import RegisterModal from "./component/common/RegisterModal";
 
-function App() {
-  return (
-    <Router>
-      <Switch>
-        <Route path="/profile/:id" component={Profile} />
-        <Route path="/fund/:id" component={Detail} />
-        <Route path="/" component={Main} />
-      </Switch>
-    </Router>
-  );
+class App extends Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      isLogin : false,
+      modalLoginStatus : false,
+      modalRegisterStatus : false,
+    }
+    this.handleTogleModalLogin = this.handleTogleModalLogin.bind(this);
+    this.handleTogleModalRegister = this.handleTogleModalRegister.bind(this);
+  }
+  handleTogleModalLogin(){
+    this.setState(prevState => ({modalLoginStatus : !prevState.modalLoginStatus}));
+    this.setState({modalRegisterStatus : false});
+  }
+  handleTogleModalRegister(){
+    this.setState(prevState => ({modalRegisterStatus : !prevState.modalRegisterStatus}));
+    this.setState({modalLoginStatus : false});
+  }
+  render() {
+    return (
+      <>
+        <Navbar handleTogleModalLogin= {this.handleTogleModalLogin} handleTogleModalRegister={this.handleTogleModalRegister} isLogin={this.state.isLogin}/>
+        <Router>
+          <Switch>
+            <Route path="/profile/:id" component={Profile} />
+            <Route path="/fund/:id" component={Detail} />
+            <Route path="/" component={Main} />
+          </Switch>
+        </Router>
+        {this.state.modalLoginStatus ? <LoginModal handleTogleModal= {this.handleTogleModalLogin}/> : <></>}
+        {this.state.modalRegisterStatus ? <RegisterModal handleTogleModal = {this.handleTogleModalRegister}/> : <></>}
+      </>
+    );
+  }
 }
 
 export default App;

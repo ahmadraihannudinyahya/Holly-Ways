@@ -4,11 +4,11 @@ import { Component } from 'react'
 class LoginModal extends Component{
   constructor(props){
     super(props);
-    this.handleOffModal= props.handleOffModal;
+    this.handleTogleModal= props.handleTogleModal;
   }
   render(){
     return (
-    <div className="modalBackdrop" id="modalLogin" onClick={this.handleOffModal}>
+    <div className="modalBackdrop" id="modalLogin" onClick={this.handleTogleModal}>
         <div className="modal">
           <form action="">
             <h1>Login</h1>
