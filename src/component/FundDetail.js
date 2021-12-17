@@ -16,7 +16,7 @@ function FundDetail(){
             <p>gathered from</p>
             <p>Rp. 200.000.000</p>
           </div>
-          <Progress />
+          <Progress value='40'/>
           <div>
             <p><b>200</b> Donation</p>
             <p><b>150</b> More Day</p>

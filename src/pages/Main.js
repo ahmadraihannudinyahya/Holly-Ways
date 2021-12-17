@@ -13,18 +13,11 @@ class Main extends Component{
 
   handleToDetailPage(e){
     const link =`/fund/${e.target.id}`;
-    if(this.state.isLogin){
-      this.props.history.push(link);
-    }else{
-      this.setState({modalLoginStatus : true})
-    }
+    this.props.history.push(link);
   }
   
   handleClickDonate(){
-    if(this.state.isLogin){
-      this.props.location.hash = '#listfund'
-    }else{
-    }
+    this.props.location.hash = '#listfund'
   }
 
   fetchFundlistServices(){
