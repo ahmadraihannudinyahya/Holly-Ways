@@ -29,7 +29,7 @@ function ProfileComponent(){
       <div className="historydonation">
         <h2>History Donation</h2>
         <div>
-          <DonorColomn />
+          <DonorColomn  isOwner={true}/>
         </div>
       </div>
     </div>

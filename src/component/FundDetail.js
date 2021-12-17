@@ -29,10 +29,10 @@ function FundDetail(props){
       <div className="donorfunds">
         <h2>List Donation (200)</h2>
         <div>
-          <DonorColomn isAproved='true'/>
-          <DonorColomn isAproved='true'/>
-          <DonorColomn isAproved='true'/>
-          <DonorColomn isAproved='true'/>
+          <DonorColomn />
+          <DonorColomn />
+          <DonorColomn />
+          <DonorColomn />
           <p>Load Mode</p>
         </div>
       </div>
