@@ -2,7 +2,8 @@ import DonorColomn from './common/DonorColomn';
 import Progress from './common/Progress';
 import './FundDetail.css'
 
-function FundDetail(){
+function FundDetail(props){
+  const {handleTogleDonateModal} = props;
   return (
     <div className="funddetail">
       <div>
@@ -22,7 +23,7 @@ function FundDetail(){
             <p><b>150</b> More Day</p>
           </div>
           <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
-          <button>Donate</button>
+          <button onClick={handleTogleDonateModal}>Donate</button>
         </div>
       </div>
       <div className="donorfunds">

@@ -1,9 +1,9 @@
 import './DonateModal.css'
 
 function DonateModal(props){
-  const {handleToogleDonateModal} = props;
+  const {handleTogleDonateModal} = props;
   return (
-   <div className="donatemodalbackdrop">
+   <div className="donatemodalbackdrop" onClick={handleTogleDonateModal}>
      <div className="donatemodal">
         <input type="number" placeholder="Nominal Donation"/>
         <div>
