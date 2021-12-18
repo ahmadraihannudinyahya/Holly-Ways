@@ -5,7 +5,8 @@ import FundDetail from "../component/FundDetail";
 
 function Detail(){
   const [state, setState] = useState({
-    donateModalStatus : false
+    donateModalStatus : false,
+    aproveModalStatus : false,
   });
 
   const handleTogleDonateModal = () => {
@@ -15,7 +16,7 @@ function Detail(){
     <>
       <FundDetail handleTogleDonateModal={handleTogleDonateModal}/>
       {state.donateModalStatus ? <DonateModal handleTogleDonateModal={handleTogleDonateModal}/> : <></>}
-      <AproveModal />
+      {state.aproveModalStatus ? <AproveModal/> : <></>}
     </>
   )
 }
