@@ -1,6 +1,5 @@
 import { useState } from "react";
 import DonateModal from "../component/common/DonateModal";
-import Navbar from "../component/common/Navbar";
 import FundDetail from "../component/FundDetail";
 
 function Detail(){

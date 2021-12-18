@@ -1,9 +1,7 @@
-import { useHistory } from 'react-router';
 import './Landing.css'
 
 function Landing(props){
   const {handleClickDonate} = props
-  const history = useHistory();
   return (
     <div className="landing">
       <div>
