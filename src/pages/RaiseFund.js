@@ -1,6 +1,8 @@
+import FormRaiseFund from "../component/FormRaiseFund";
+
 function RaiseFund(){
   return(
-    <div></div>
+    <FormRaiseFund/>
   )
 }
 

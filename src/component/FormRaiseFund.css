@@ -1,0 +1,56 @@
+.formraisefund {
+  padding: 79px 160px 79px 197px;
+  background-color: #e5e5e5;
+}
+.formraisefund > h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 71px;
+}
+.formraisefund > input {
+  width: 100%;
+  height: 50px;
+  background-color: rgba(188, 188, 188, 0.25);
+  border: solid 2px #bcbcbc;
+  border-radius: 5px;
+  margin-bottom: 24px;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: 400;
+}
+.formraisefund > label {
+  display: inline-block;
+  height: 35px;
+  padding: 8px 16px;
+  background-color: #c32424;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 400;
+  border-radius: 10px;
+  margin-bottom: 24px;
+}
+.formraisefund > textarea {
+  resize: none;
+  width: 100%;
+  height: 237px;
+  border-radius: 5px;
+  border: solid 2px #bcbcbc;
+  background-color: rgba(188, 188, 188, 0.25);
+  padding: 10px;
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 83px;
+}
+.formraisefund > div {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.formraisefund > div > button {
+  padding: 11px 130px;
+  background-color: #c32424;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+}
