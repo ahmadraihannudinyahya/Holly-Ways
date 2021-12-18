@@ -6,6 +6,7 @@ import Profile from "./pages/Profile";
 import Navbar from "./component/common/Navbar";
 import LoginModal from "./component/common/LoginModal";
 import RegisterModal from "./component/common/RegisterModal";
+import MyFund from "./pages/MyFund";
 
 class App extends Component {
   constructor(props){
@@ -34,6 +35,7 @@ class App extends Component {
             <Switch>
               <Route path="/profile" component={Profile} />
               <Route path="/fund/:id" component={Detail} />
+              <Route path="/fund" component={MyFund} />
               <Route path="/" component={Main} />
             </Switch>
           {this.state.modalLoginStatus ? <LoginModal handleTogleModal= {this.handleTogleModalLogin}/> : <></>}

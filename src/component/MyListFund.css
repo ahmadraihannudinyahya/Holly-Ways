@@ -1,0 +1,29 @@
+.myraisefund {
+  padding: 79px 160px 80px 197px;
+  min-height: 100vh;
+  background-color: #e5e5e5;
+}
+.myraisefund > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 19px;
+}
+.myraisefund > div:first-child > div:first-child {
+  font-size: 36px;
+  font-weight: 700;
+  color: #000;
+}
+.myraisefund > div:first-child > div:nth-child(2) > button {
+  background-color: #c32424;
+  border-radius: 10px;
+  border: none;
+  height: 35px;
+  padding: 8px 13px;
+  color: #fff;
+  font: 18px;
+  font-weight: 900;
+}
+.myraisefund > div:nth-child(2) {
+  display: flex;
+  gap: 28px;
+}
