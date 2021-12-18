@@ -1,4 +1,5 @@
 import { useHistory } from 'react-router';
+import DropDown from './DropDown';
 import './Navbar.css'
 
 function Navbar(props){
@@ -13,6 +14,7 @@ function Navbar(props){
       <img src="/Icon.png" alt="icon" onClick = {handleIconClick}/>
       <div>
         {isLogin? <img src="/Icon.png" alt="avatar" />: <><button id="login" onClick={handleTogleModalLogin}>Login</button><button id="register" onClick={handleTogleModalRegister}>Register</button> </>}
+        <DropDown />
       </div>
     </div>
   )
