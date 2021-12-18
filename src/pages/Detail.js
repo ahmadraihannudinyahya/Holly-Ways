@@ -1,4 +1,5 @@
 import { useState } from "react";
+import AproveModal from "../component/common/AproveModal";
 import DonateModal from "../component/common/DonateModal";
 import FundDetail from "../component/FundDetail";
 
@@ -14,7 +15,7 @@ function Detail(){
     <>
       <FundDetail handleTogleDonateModal={handleTogleDonateModal}/>
       {state.donateModalStatus ? <DonateModal handleTogleDonateModal={handleTogleDonateModal}/> : <></>}
-      
+      <AproveModal />
     </>
   )
 }

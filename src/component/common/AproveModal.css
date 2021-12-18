@@ -1,0 +1,48 @@
+.aprovemodalbackdrop {
+  top: 0;
+  position: fixed;
+  background-color: transparent;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.aprovemodalbackdrop > .modal {
+  background-color: #fff;
+  width: 416px;
+  align-self: center;
+  border-radius: 10px;
+  padding: 34px;
+  z-index: 99;
+}
+.aprovemodalbackdrop > .modal > h3 {
+  margin: 5px 0;
+  font-size: 24px;
+  font-weight: 700;
+}
+.aprovemodalbackdrop > .modal > p {
+  margin: 19px 0;
+  border: solid 2px #bcbcbc;
+  padding: 10px;
+  background-color: rgba(188, 188, 188, 0.25);
+  border-radius: 5px;
+  color: #bcbcbc;
+  font-size: 18px;
+  font-weight: 400;
+}
+.aprovemodalbackdrop > .modal > img {
+  height: 326px;
+  width: 100%;
+  object-fit: cover;
+  margin-bottom: 21px;
+}
+.aprovemodalbackdrop > .modal > button {
+  width: 100%;
+  border: none;
+  padding: 10px;
+  background-color: #c32424;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 400;
+}
