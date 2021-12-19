@@ -34,21 +34,19 @@
   justify-content: center;
 }
 .donorcolomn > div:first-child > div:nth-child(3) > div:nth-child(2) > div {
-  background: rgb(0, 255, 117);
-  background: linear-gradient(
+  background-color: rgba(0, 255, 117, 0.1);
+  background-color: linear-gradient(
     90deg,
     rgba(0, 255, 117, 1) 0%,
     rgba(0, 255, 133, 1) 100%
   );
-  opacity: 10%;
   border-radius: 2px;
-  padding: 2px 35px;
 }
 .donorcolomn > div:first-child > div:nth-child(3) > div:nth-child(2) > div > p {
   color: #00ff47;
   font-size: 10px;
   font-style: medium;
-  opacity: 1;
+  padding: 4px 35px;
 }
 .donorcolomn > div:nth-child(2) {
   flex-grow: 1;

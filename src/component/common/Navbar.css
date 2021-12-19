@@ -4,6 +4,10 @@
   display: flex;
   justify-content: space-between;
 }
+.navbar > img {
+  width: 65px;
+  height: 45px;
+}
 .navbar > img:hover {
   cursor: pointer;
 }

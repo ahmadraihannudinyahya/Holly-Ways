@@ -29,7 +29,7 @@ function Navbar(props){
   <div className="navbar">
       <img src="/Icon.png" alt="icon" onClick = {handleIconClick}/>
       <div>
-        {isLogin? <img src="/Icon.png" alt="avatar" onClick={togleDropdown}/>: <><button id="login" onClick={handleTogleModalLogin}>Login</button><button id="register" onClick={handleTogleModalRegister}>Register</button> </>}
+        {isLogin? <img src="/image/Rectangle12.png" alt="avatar" onClick={togleDropdown}/>: <><button id="login" onClick={handleTogleModalLogin}>Login</button><button id="register" onClick={handleTogleModalRegister}>Register</button> </>}
         {state.dropdownStatus?<DropDown handleMoveToProfilePage={handleMoveToProfilePage} handleMoveToFundPage={handleMoveToFundPage}/>:<></>}
       </div>
     </div>

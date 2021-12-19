@@ -15,6 +15,7 @@
   padding: 33px;
 }
 .modalBackdrop > .modal > form > h1 {
+  font-family: "Open Sans", sans-serif;
   margin: 8px 0;
 }
 
@@ -41,9 +42,18 @@
   font-weight: 700;
   font-size: 18px;
 }
+.modalBackdrop > .modal > form > button:hover {
+  cursor: pointer;
+}
+.modalBackdrop > .modal > form > button:active {
+  opacity: 0.7;
+}
 .modalBackdrop > .modal > form > p {
   text-align: center;
   color: #333333;
   font-size: 18px;
   font-weight: 400px;
+}
+.modalBackdrop > .modal > form > p > b:hover {
+  cursor: pointer;
 }
