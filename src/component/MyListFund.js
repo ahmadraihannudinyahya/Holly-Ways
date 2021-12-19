@@ -2,8 +2,12 @@ import CardFund from './common/CardFund';
 import './MyListFund.css'
 
 function MyListFund(props){
-  const {fetchMyFundlistServices}= props;
+  const {fetchMyFundlistServices, moveToRaiseFundPage}= props;
   const listFund = fetchMyFundlistServices();
+  const hanleClikRaiseFund = (e) =>{
+    e.preventDefault();
+    moveToRaiseFundPage();
+  }
   return(
     <div className="myraisefund">
       <div>
@@ -11,7 +15,7 @@ function MyListFund(props){
           <h2>My Raise Fund</h2>
         </div>
         <div>
-          <button>Make Raise Fund</button>
+          <button onClick={hanleClikRaiseFund}>Make Raise Fund</button>
         </div>
       </div>
       <div>
