@@ -3,7 +3,7 @@ import Progress from './common/Progress';
 import './FundDetail.css'
 
 function FundDetail(props){
-  const {handleTogleDonateModal, isAproved = true} = props;
+  const {handleTogleDonateModal, handleAproveModal, isAproved = true} = props;
   return (
     <div className="funddetail">
       <div>
@@ -38,9 +38,9 @@ function FundDetail(props){
       <div className="donorfunds">
       <h2>Donation has not been approved (10)</h2>
         <div>
-          <DonorColomn isAproved={false}/>
-          <DonorColomn isAproved={false}/>
-          <DonorColomn isAproved={false}/>
+          <DonorColomn isAproved={false} handleAproveModal={handleAproveModal}/>
+          <DonorColomn isAproved={false} handleAproveModal={handleAproveModal}/>
+          <DonorColomn isAproved={false} handleAproveModal={handleAproveModal}/>
           <p>Load Mode</p>
         </div>
       </div>

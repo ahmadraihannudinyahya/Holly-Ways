@@ -13,7 +13,7 @@ class App extends Component {
   constructor(props){
     super(props)
     this.state = {
-      isLogin : true,
+      isLogin : false,
       modalLoginStatus : false,
       modalRegisterStatus : false,
     }

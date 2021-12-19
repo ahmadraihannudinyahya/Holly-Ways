@@ -12,11 +12,14 @@ function Detail(){
   const handleTogleDonateModal = () => {
     setState(prevState => ({donateModalStatus : !prevState.donateModalStatus}));
   }
+  const handleAproveModal = ()=>{
+    setState(prevState => ({aproveModalStatus : !prevState.aproveModalStatus}));
+  }
   return(
     <>
-      <FundDetail handleTogleDonateModal={handleTogleDonateModal}/>
+      <FundDetail handleTogleDonateModal={handleTogleDonateModal} handleAproveModal={handleAproveModal}/>
       {state.donateModalStatus ? <DonateModal handleTogleDonateModal={handleTogleDonateModal}/> : <></>}
-      {state.aproveModalStatus ? <AproveModal/> : <></>}
+      {state.aproveModalStatus ? <AproveModal handleAproveModal={handleAproveModal}/> : <></>}
     </>
   )
 }

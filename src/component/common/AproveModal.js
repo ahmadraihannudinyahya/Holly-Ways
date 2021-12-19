@@ -1,8 +1,14 @@
 import './AproveModal.css'
 
-function AproveModal(){
+function AproveModal(props){
+  const {handleAproveModal} = props;
+  const handleOffModal =(e)=>{
+    if(e.target.classList.contains('aprovemodalbackdrop')){
+      handleAproveModal();
+    }
+  }
   return(
-    <div className="aprovemodalbackdrop">
+    <div onClick={handleOffModal} className="aprovemodalbackdrop">
       <div className="modal">
         <h3>Zain</h3>
         <p>45.000.000</p>

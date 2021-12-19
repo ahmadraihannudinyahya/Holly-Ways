@@ -4,6 +4,7 @@ function DonorColomn(props){
   const { 
     isAproved = true ,
     isOwner = false,
+    handleAproveModal,
   } = props
   return (
     <div className="donorcolomn">
@@ -23,7 +24,7 @@ function DonorColomn(props){
         </div>
       </div>
       {isAproved?<></>:<div>
-        <button>View</button>
+        <button onClick={handleAproveModal}>View</button>
       </div>}
       
     </div>
