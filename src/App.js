@@ -40,7 +40,7 @@ class App extends Component {
               <Route path="/fund" component={MyFund} />
               <Route path="/" component={Main} />
             </Switch>
-          {this.state.modalLoginStatus ? <LoginModal handleTogleModal= {this.handleTogleModalLogin}/> : <></>}
+          {this.state.modalLoginStatus ? <LoginModal handleTogleModal= {this.handleTogleModalLogin} handleSwitchModal= {this.handleTogleModalRegister}/> : <></>}
           {this.state.modalRegisterStatus ? <RegisterModal handleTogleModal = {this.handleTogleModalRegister} handleSwitchModal= {this.handleTogleModalLogin}/> : <></>}
         </Router>
       </>

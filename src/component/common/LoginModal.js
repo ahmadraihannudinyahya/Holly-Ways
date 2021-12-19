@@ -5,6 +5,7 @@ class LoginModal extends Component{
   constructor(props){
     super(props);
     this.handleTogleModal= props.handleTogleModal;
+    this.handleSwitchModal = props.handleSwitchModal;
     this.handleOffModal = this.handleOffModal.bind(this);
   }
   handleOffModal(e){
@@ -21,7 +22,7 @@ class LoginModal extends Component{
           <input type="email" placeholder="Email" />
           <input type="password" placeholder="Password"/>
           <button>Login</button>
-          <p>Don't have an account ? Klik Here</p>
+          <p>Don't have an account ? <b onClick={this.handleSwitchModal}>Klik Here</b></p>
         </form>
       </div>
     </div>
