@@ -13,7 +13,7 @@ class App extends Component {
   constructor(props){
     super(props)
     this.state = {
-      isLogin : true,
+      isLogin : false,
       modalLoginStatus : false,
       modalRegisterStatus : false,
     }
@@ -41,7 +41,7 @@ class App extends Component {
               <Route path="/" component={Main} />
             </Switch>
           {this.state.modalLoginStatus ? <LoginModal handleTogleModal= {this.handleTogleModalLogin}/> : <></>}
-          {this.state.modalRegisterStatus ? <RegisterModal handleTogleModal = {this.handleTogleModalRegister}/> : <></>}
+          {this.state.modalRegisterStatus ? <RegisterModal handleTogleModal = {this.handleTogleModalRegister} handleSwitchModal= {this.handleTogleModalLogin}/> : <></>}
         </Router>
       </>
     );

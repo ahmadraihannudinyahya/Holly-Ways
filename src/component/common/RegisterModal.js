@@ -6,6 +6,7 @@ class RegisterModal extends Component{
   constructor(props){
     super(props);
     this.handleTogleModal = props.handleTogleModal;
+    this.handleSwitchModal = props.handleSwitchModal;
     this.handleOffModal = this.handleOffModal.bind(this);
   }
   handleOffModal(e){
@@ -23,7 +24,7 @@ class RegisterModal extends Component{
             <input type="password" placeholder="Password"/>
             <input type="text" placeholder="Fullname"/>
             <button>Register</button>
-            <p>Already have an account ? Klik Here</p>
+            <p>Already have an account ? <b onClick={this.handleSwitchModal}>Klik Here</b></p>
           </form>
         </div>
       </div>
