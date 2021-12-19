@@ -6,6 +6,9 @@ function MyFund (){
   const moveToRaiseFundPage = ()=>{
     history.push('/raisefund');
   }
+  const moveToFundDetailPage = fundId =>{
+    history.push(`/fund/${fundId}`);
+  }
   const fetchMyFundlistServices = () => {
     return [
       {
@@ -28,7 +31,7 @@ function MyFund (){
   }
   return(
     <div>
-      <MyListFund fetchMyFundlistServices={fetchMyFundlistServices} moveToRaiseFundPage={moveToRaiseFundPage}/>
+      <MyListFund fetchMyFundlistServices={fetchMyFundlistServices} moveToRaiseFundPage={moveToRaiseFundPage} moveToFundDetailPage={moveToFundDetailPage}/>
     </div>
   )
 }

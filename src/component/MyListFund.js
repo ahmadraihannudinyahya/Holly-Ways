@@ -2,11 +2,15 @@ import CardFund from './common/CardFund';
 import './MyListFund.css'
 
 function MyListFund(props){
-  const {fetchMyFundlistServices, moveToRaiseFundPage}= props;
+  const {fetchMyFundlistServices, moveToRaiseFundPage, moveToFundDetailPage}= props;
   const listFund = fetchMyFundlistServices();
   const hanleClikRaiseFund = (e) =>{
     e.preventDefault();
     moveToRaiseFundPage();
+  }
+  const handleToDetailPage = (e) =>{
+    e.preventDefault();
+    moveToFundDetailPage(e.target.id)
   }
   return(
     <div className="myraisefund">
@@ -19,7 +23,7 @@ function MyListFund(props){
         </div>
       </div>
       <div>
-        {listFund.map(fund =><CardFund key={fund.id} fund={fund}/>)}
+        {listFund.map(fund =><CardFund key={fund.id} fund={fund} handleToDetailPage={handleToDetailPage}/>)}
       </div>
     </div>
   )
