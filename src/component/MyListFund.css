@@ -23,6 +23,12 @@
   font: 18px;
   font-weight: 900;
 }
+.myraisefund > div:first-child > div:nth-child(2) > button:hover {
+  cursor: pointer;
+}
+.myraisefund > div:first-child > div:nth-child(2) > button:active {
+  opacity: 0.7;
+}
 .myraisefund > div:nth-child(2) {
   display: flex;
   gap: 28px;

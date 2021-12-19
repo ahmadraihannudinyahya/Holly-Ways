@@ -29,6 +29,12 @@
   border-radius: 10px;
   margin-bottom: 24px;
 }
+.formraisefund > label:hover {
+  cursor: pointer;
+}
+.formraisefund > label:active {
+  opacity: 0.7;
+}
 .formraisefund > textarea {
   resize: none;
   width: 100%;
@@ -53,4 +59,10 @@
   color: #fff;
   font-size: 18px;
   font-weight: 700;
+}
+.formraisefund > div > button:hover {
+  cursor: pointer;
+}
+.formraisefund > div > button:active {
+  opacity: 0.7;
 }

@@ -18,3 +18,9 @@
   border: none;
   text-align: left;
 }
+.dropdown-menu > button:hover {
+  cursor: pointer;
+}
+.dropdown-menu > button:active {
+  opacity: 0.7;
+}
