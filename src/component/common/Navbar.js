@@ -14,6 +14,10 @@ function Navbar(props){
     e.preventDefault();
     history.push('/')
   }
+  const handleMoveToProfilePage=()=>{
+    history.push('/profile')
+    togleDropdown()
+  }
   const togleDropdown=()=>{
     setState(prevState => ({dropdownStatus : !prevState.dropdownStatus}))
   }
@@ -22,7 +26,7 @@ function Navbar(props){
       <img src="/Icon.png" alt="icon" onClick = {handleIconClick}/>
       <div>
         {isLogin? <img src="/Icon.png" alt="avatar" onClick={togleDropdown}/>: <><button id="login" onClick={handleTogleModalLogin}>Login</button><button id="register" onClick={handleTogleModalRegister}>Register</button> </>}
-        {state.dropdownStatus?<DropDown />:<></>}
+        {state.dropdownStatus?<DropDown handleMoveToProfilePage={handleMoveToProfilePage}/>:<></>}
       </div>
     </div>
   )

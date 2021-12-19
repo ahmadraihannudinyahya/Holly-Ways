@@ -1,9 +1,14 @@
 import './DropDown.css'
 
-function DropDown(){
+function DropDown(props){
+  const {handleMoveToProfilePage} = props;
+  const handleProfileClick =(e)=>{
+    e.preventDefault();
+    handleMoveToProfilePage();
+  }
   return(
     <div className="dropdown-menu">
-      <button>Profile</button>
+      <button onClick={handleProfileClick}>Profile</button>
       <button>Raise Fund</button>
       <hr />
       <button>Logout</button>
