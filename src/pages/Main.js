@@ -1,4 +1,7 @@
 import { Component } from "react"
+import Navbar from "../component/common/Navbar";
+import LoginModal from "../component/common/LoginModal";
+import RegisterModal from "../component/common/RegisterModal";
 
 import Landing from "../component/Landing"
 import ListFund from "../component/ListFund"
@@ -7,19 +10,31 @@ class Main extends Component{
   constructor(props){
     super(props);
     this.props = props;
-    this.handleToDetailPage = this.handleToDetailPage.bind(this);
-    this.handleClickDonate = this.handleClickDonate.bind(this);
-  }
+    this.state = {
+      modalLoginStatus : false,
+      modalRegisterStatus : false,
+      user : 'skdhfkhsdkfhsj'
+    }
 
-  handleToDetailPage(e){
-    const link =`/fund/${e.target.id}`;
-    this.props.history.push(link);
+    this.togleModalLogin = this.togleModalLogin.bind(this);
+    this.togleModalRegister = this.togleModalRegister.bind(this);
+    this.movePage = this.movePage.bind(this)
   }
-  
-  handleClickDonate(){
-    this.props.location.hash='#listfund'
+  togleModalLogin(){
+    this.setState(prevState => ({modalLoginStatus : !prevState.modalLoginStatus}));
+    this.setState({modalRegisterStatus :false});
   }
-
+  togleModalRegister(){
+    this.setState(prevState => ({modalRegisterStatus : !prevState.modalRegisterStatus}));
+    this.setState({modalLoginStatus:false});
+  }
+  movePage(page){
+    if(this.props.isLogin){
+      this.props.history.push(page)
+    }else{
+      this.togleModalLogin()
+    }
+  }
   fetchFundlistServices(){
     return [
       {
@@ -49,8 +64,11 @@ class Main extends Component{
   render(){
     return (
       <>
-        <Landing handleClickDonate = {this.handleClickDonate}/>
-        <ListFund fetchFundlistServices = {this.fetchFundlistServices} handleToDetailPage= {this.handleToDetailPage}/>
+        <Navbar isLogin = {this.props.isLogin} handleTogleModalLogin ={this.togleModalLogin} handleTogleModalRegister={this.togleModalRegister}/>
+        <Landing />
+        <ListFund fetchFundlistServices = {this.fetchFundlistServices} movePage= {this.movePage}/>
+        {this.state.modalLoginStatus?<LoginModal handleTogleModal={this.togleModalLogin} handleSwitchModal={this.togleModalRegister}/>:<></>}
+        {this.state.modalRegisterStatus?<RegisterModal handleTogleModal={this.togleModalRegister} handleSwitchModal={this.togleModalLogin}/>:<></>}
       </>
     )
   }

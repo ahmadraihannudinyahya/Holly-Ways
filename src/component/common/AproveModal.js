@@ -2,6 +2,7 @@ import './AproveModal.css'
 
 function AproveModal(props){
   const {handleAproveModal} = props;
+  
   const handleOffModal =(e)=>{
     if(e.target.classList.contains('aprovemodalbackdrop')){
       handleAproveModal();

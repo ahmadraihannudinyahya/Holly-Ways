@@ -9,18 +9,18 @@ function Navbar(props){
   const [state, setState] = useState({
     dropdownStatus:false,
   })
+
   const history = useHistory();
+
   const handleIconClick = (e)=>{
     e.preventDefault();
     history.push('/')
   }
   const handleMoveToProfilePage=()=>{
     history.push('/profile')
-    togleDropdown()
   }
   const handleMoveToFundPage = ()=>{
     history.push('/fund');
-    togleDropdown()
   }
   const togleDropdown=()=>{
     setState(prevState => ({dropdownStatus : !prevState.dropdownStatus}))
