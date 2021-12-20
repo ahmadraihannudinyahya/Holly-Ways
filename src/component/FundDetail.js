@@ -3,7 +3,7 @@ import Progress from './common/Progress';
 import './FundDetail.css'
 
 function FundDetail(props){
-  const {handleTogleDonateModal, handleAproveModal, isAproved = true} = props;
+  const {handleTogleDonateModal, handleAproveModal,} = props;
   return (
     <div className="funddetail">
       <div>

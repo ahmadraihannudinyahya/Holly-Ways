@@ -17,7 +17,7 @@ class Main extends Component{
   }
   
   handleClickDonate(){
-    this.props.location.hash = '#listfund'
+    this.props.location.hash='#listfund'
   }
 
   fetchFundlistServices(){

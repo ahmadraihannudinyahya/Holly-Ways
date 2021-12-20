@@ -15,11 +15,10 @@
 
 .funddetail > div:first-child > div:first-child {
   width: 60%;
-  padding-bottom: 30px;
 }
 .funddetail > div:first-child > div:first-child > img {
-  height: 550px;
-  width: 550px;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 .funddetail > div:first-child > div:nth-child(2) {

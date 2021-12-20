@@ -32,5 +32,6 @@
 }
 .myraisefund > div:nth-child(2) {
   display: flex;
+  flex-wrap: wrap;
   gap: 28px;
 }

@@ -10,8 +10,8 @@ import MyFund from "./pages/MyFund";
 import RaiseFund from "./pages/RaiseFund";
 
 class App extends Component {
-  constructor(props){
-    super(props)
+  constructor(){
+    super()
     this.state = {
       isLogin : true,
       modalLoginStatus : false,
@@ -38,7 +38,7 @@ class App extends Component {
               <Route path="/raisefund" component={RaiseFund} />
               <Route path="/fund/:id" component={Detail} />
               <Route path="/fund" component={MyFund} />
-              <Route path="/" component={Main} />
+              <Route path="/" render={(props)=>(<Main {...props} isLogin={this.state.isLogin}/>)}/>
             </Switch>
           {this.state.modalLoginStatus ? <LoginModal handleTogleModal= {this.handleTogleModalLogin} handleSwitchModal= {this.handleTogleModalRegister}/> : <></>}
           {this.state.modalRegisterStatus ? <RegisterModal handleTogleModal = {this.handleTogleModalRegister} handleSwitchModal= {this.handleTogleModalLogin}/> : <></>}

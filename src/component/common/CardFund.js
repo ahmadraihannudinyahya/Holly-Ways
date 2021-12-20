@@ -2,7 +2,10 @@ import './CardFund.css'
 import Progress from './Progress';
 function CardFund(props){
   const {id , title, goal_donations, descriton, progres, thumbnail} = props.fund;
-  const {handleToDetailPage} = props;
+  const handleClickToDetailPage = e =>{
+    e.preventDefault();
+    props.movePage(`/fund/${id}`);
+  }
   return(
     <div className="cardfund">
       <img src={thumbnail} alt={title} />
@@ -16,7 +19,7 @@ function CardFund(props){
           <p>{goal_donations}</p>
         </div>
         <div>
-          <button id={id} onClick={handleToDetailPage}>Donate</button>
+          <button onClick={handleClickToDetailPage}>Donate</button>
         </div>
       </div>
     </div>
