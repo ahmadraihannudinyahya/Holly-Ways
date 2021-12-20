@@ -20,7 +20,7 @@ class App extends Component {
           <Route path="/profile" render={props => (<Profile {...props} isLogin={this.state.isLogin}/>)} />
           <Route path="/raisefund" render={props => (<RaiseFund {...props} isLogin={this.state.isLogin}/>)} />
           <Route path="/fund/:id" render={(props)=>(<Detail {...props} isLogin ={this.state.isLogin}/>)}/>
-          <Route path="/fund" component={MyFund} />
+          <Route path="/fund" render={props =>(<MyFund {...props} isLogin={this.props.isLogin}/>)} />
           <Route path="/" render={(props)=>(<Main {...props} isLogin={this.state.isLogin}/>)}/>
         </Switch>
       </Router>

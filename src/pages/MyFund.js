@@ -1,15 +1,17 @@
-import { useHistory } from "react-router";
+import { Component } from "react";
 import MyListFund from "../component/MyListFund";
 
-function MyFund (){
-  const history = useHistory();
-  const moveToRaiseFundPage = ()=>{
-    history.push('/raisefund');
+class MyFund extends Component{
+  constructor(props){
+    super();
+    this.props = props;
+    this.movePage = this.movePage.bind(this);
+    this.fetchMyFundlistServices = this.fetchMyFundlistServices.bind(this);
   }
-  const moveToFundDetailPage = fundId =>{
-    history.push(`/fund/${fundId}`);
+  movePage(page){
+    this.props.history.push(page);
   }
-  const fetchMyFundlistServices = () => {
+  fetchMyFundlistServices(){
     return [
       {
         id:'gsdjjasdb',
@@ -29,11 +31,13 @@ function MyFund (){
       }
     ]
   }
-  return(
-    <div>
-      <MyListFund fetchMyFundlistServices={fetchMyFundlistServices} moveToRaiseFundPage={moveToRaiseFundPage} moveToFundDetailPage={moveToFundDetailPage}/>
-    </div>
-  )
+  render(){
+    return(
+      <>
+        <MyListFund fetchMyFundlistServices={this.fetchMyFundlistServices} movePage={this.movePage}/>
+      </>
+    )
+  }
 }
 
 export default MyFund;
