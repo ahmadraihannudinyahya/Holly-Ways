@@ -13,7 +13,6 @@ class Main extends Component{
     this.state = {
       modalLoginStatus : false,
       modalRegisterStatus : false,
-      user : 'skdhfkhsdkfhsj'
     }
 
     this.togleModalLogin = this.togleModalLogin.bind(this);
