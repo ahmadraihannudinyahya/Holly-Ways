@@ -18,7 +18,7 @@ class App extends Component {
       <Router>
         <Switch>
           <Route path="/profile" render={props => (<Profile {...props} isLogin={this.state.isLogin}/>)} />
-          <Route path="/raisefund" component={RaiseFund} />
+          <Route path="/raisefund" render={props => (<RaiseFund {...props} isLogin={this.state.isLogin}/>)} />
           <Route path="/fund/:id" render={(props)=>(<Detail {...props} isLogin ={this.state.isLogin}/>)}/>
           <Route path="/fund" component={MyFund} />
           <Route path="/" render={(props)=>(<Main {...props} isLogin={this.state.isLogin}/>)}/>
