@@ -4,14 +4,19 @@ import { Component } from 'react'
 class LoginModal extends Component{
   constructor(props){
     super(props);
-    this.handleTogleModal= props.handleTogleModal;
-    this.handleSwitchModal = props.handleSwitchModal;
+    this.modalHandle = props.modalHandle;
     this.handleOffModal = this.handleOffModal.bind(this);
+    this.handleSwitchModal = this.handleSwitchModal.bind(this);
   }
   handleOffModal(e){
+    e.preventDefault();
     if(e.target.classList.contains('modalBackdrop')){
-      this.handleTogleModal();
+      this.modalHandle();
     }
+  }
+  handleSwitchModal(e){
+    e.preventDefault();
+    this.modalHandle('registerModal')
   }
   render(){
     return (

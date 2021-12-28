@@ -1,5 +1,4 @@
 import { Component } from "react";
-import Navbar from "../component/common/Navbar";
 import ProfileComponent from "../component/ProfieComponent";
 
 class Profile extends Component{
@@ -15,7 +14,6 @@ class Profile extends Component{
   render(){
     return (
       <>
-        <Navbar isLogin = {this.props.isLogin}/>
         <ProfileComponent />
       </>
     )

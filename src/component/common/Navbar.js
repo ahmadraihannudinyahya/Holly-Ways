@@ -4,7 +4,7 @@ import DropDown from './DropDown';
 import './Navbar.css'
 
 function Navbar(props){
-  const {handleTogleModalLogin, handleTogleModalRegister, isLogin} = props;
+  const {modalHandle,  isLogin} = props;
 
   const [state, setState] = useState({
     dropdownStatus:false,
@@ -24,6 +24,14 @@ function Navbar(props){
   }
   const togleDropdown=()=>{
     setState(prevState => ({dropdownStatus : !prevState.dropdownStatus}))
+  }
+  const handleTogleModalLogin = e =>{
+    e.preventDefault();
+    modalHandle('loginModal');
+  }
+  const handleTogleModalRegister = e =>{
+    e.preventDefault();
+    modalHandle('registerModal')
   }
   return (
   <div className="navbar">

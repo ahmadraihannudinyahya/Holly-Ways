@@ -1,5 +1,4 @@
 import { Component } from "react";
-import Navbar from "../component/common/Navbar";
 import FormRaiseFund from "../component/FormRaiseFund";
 
 class RaiseFund extends Component{
@@ -15,7 +14,6 @@ class RaiseFund extends Component{
   render(){
     return(
       <>
-        <Navbar isLogin = {this.props.isLogin}/>
         <FormRaiseFund/>
       </>
     )

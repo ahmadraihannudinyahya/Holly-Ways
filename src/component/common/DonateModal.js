@@ -1,10 +1,12 @@
 import './DonateModal.css'
 
 function DonateModal(props){
-  const {handleTogleDonateModal} = props;
+  const {modalHandle} = props;
+
   const handleOffModal = e =>{
+    e.preventDefault();
     if(e.target.classList.contains('donatemodalbackdrop')){
-      handleTogleDonateModal(e);
+      modalHandle();
     }
   }
   return (

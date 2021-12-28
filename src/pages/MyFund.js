@@ -1,6 +1,5 @@
 import { Component } from "react";
 import MyListFund from "../component/MyListFund";
-import Navbar from "../component/common/Navbar";
 
 class MyFund extends Component{
   constructor(props){
@@ -40,7 +39,6 @@ class MyFund extends Component{
   render(){
     return(
       <>
-        <Navbar isLogin = {this.props.isLogin} />
         <MyListFund fetchMyFundlistServices={this.fetchMyFundlistServices} movePage={this.movePage}/>
       </>
     )

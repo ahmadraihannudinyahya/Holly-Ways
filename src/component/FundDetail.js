@@ -3,7 +3,16 @@ import Progress from './common/Progress';
 import './FundDetail.css'
 
 function FundDetail(props){
-  const {handleTogleDonateModal, handleAproveModal,} = props;
+  const { modalHandle } = props;
+
+  const handleTogleDonateModal = e =>{
+    e.preventDefault();
+    modalHandle('donateModal');
+  }
+  const handleAproveModal = e =>{
+    e.preventDefault();
+    modalHandle('aproveModal');
+  }
   return (
     <div className="funddetail">
       <div>
