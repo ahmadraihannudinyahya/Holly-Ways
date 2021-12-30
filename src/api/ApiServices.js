@@ -8,8 +8,19 @@ const ApiServices  = {
   postRegisterUser : async ( registerUser ) =>{
     return api.post('/register', registerUser);
   },
-  postLoginUser : async (loginUser) =>{
+  postLoginUser : async (loginUser) => {
     return api.post('/login', loginUser);
+  },
+  getAllfund : async () => {
+    return api.get('/fund');
+  },
+  postFund : async (newFund) => {
+    return api.post('/fund', newFund, {
+      headers : {
+        Authorization :  `bearer ${localStorage.getItem('token')}`,
+        'Content-Type' : 'multipart/form-data,'
+      }
+    })
   }
 }
 export default ApiServices;

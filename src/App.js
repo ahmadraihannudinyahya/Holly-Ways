@@ -16,7 +16,7 @@ class App extends Component {
   constructor(){
     super()
     this.state = {
-      isLogin : false,
+      isLogin : true,
       modal : {
         loginModal : false,
         registerModal : false,
@@ -29,8 +29,8 @@ class App extends Component {
   }
   componentDidMount(){
     const token = localStorage.getItem('token');
-    if( token ){
-      this.setIsLogin(true);
+    if( !token ){
+      this.setIsLogin();
     }
   }
   setIsLogin(isLogin){
@@ -66,9 +66,9 @@ class App extends Component {
         <Navbar isLogin = {this.state.isLogin} modalHandle = {this.modalHandle} setIsLogin = {this.setIsLogin}/>
         <Switch>
           <Route path="/profile" render={props => (<Profile {...props} isLogin={this.state.isLogin} modalHandle = {this.modalHandle}/>)} />
-          <Route path="/raisefund" render={props => (<RaiseFund {...props} isLogin={this.state.isLogin}/>)} />
+          <Route path="/raisefund" render={props => (<RaiseFund {...props} isLogin={this.state.isLogin} postFund={ApiServices.postFund}/>)} />
           <Route path="/fund/:id" render={(props)=>(<Detail {...props} isLogin ={this.state.isLogin} modalHandle = {this.modalHandle}/>)}/>
-          <Route path="/fund" render={props =>(<MyFund {...props} isLogin={this.props.isLogin}/>)} />
+          <Route path="/fund" render={props =>(<MyFund {...props} isLogin={this.state.isLogin}/>)} />
           <Route path="/" render={(props)=>(<Main {...props} isLogin={this.state.isLogin} modalHandle = {this.modalHandle}/>)}/>
         </Switch>
         {this.state.modal.loginModal?<LoginModal modalHandle = {this.modalHandle} postLogin = {ApiServices.postLoginUser} setIsLogin = {this.setIsLogin}/>:<></>}

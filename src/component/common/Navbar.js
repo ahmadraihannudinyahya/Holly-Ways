@@ -15,6 +15,8 @@ function Navbar(props){
   const handleIconClick = (e)=>{
     e.preventDefault();
     history.push('/')
+    setState(prevState => ({dropdownStatus : false}))
+
   }
   const handleMoveToProfilePage=()=>{
     history.push('/profile')
