@@ -1,5 +1,6 @@
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import { Component } from "react";
+import ApiServices from './api/ApiServices';
 import Main from "./pages/Main";
 import Detail from "./pages/Detail";
 import Profile from "./pages/Profile";
@@ -24,6 +25,20 @@ class App extends Component {
       }
     }
     this.modalHandle = this.modalHandle.bind(this);
+    this.setIsLogin = this.setIsLogin.bind(this);
+  }
+  componentDidMount(){
+    const token = localStorage.getItem('token');
+    if( token ){
+      this.setIsLogin(true);
+    }
+  }
+  setIsLogin(isLogin){
+    if(isLogin){
+      this.setState({isLogin : true});
+    }else {
+      this.setState({isLogin : false});
+    }
   }
   modalHandle(type){
     this.setState({modal : {
@@ -48,7 +63,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <Navbar isLogin = {this.state.isLogin} modalHandle = {this.modalHandle}/>
+        <Navbar isLogin = {this.state.isLogin} modalHandle = {this.modalHandle} setIsLogin = {this.setIsLogin}/>
         <Switch>
           <Route path="/profile" render={props => (<Profile {...props} isLogin={this.state.isLogin} modalHandle = {this.modalHandle}/>)} />
           <Route path="/raisefund" render={props => (<RaiseFund {...props} isLogin={this.state.isLogin}/>)} />
@@ -56,8 +71,8 @@ class App extends Component {
           <Route path="/fund" render={props =>(<MyFund {...props} isLogin={this.props.isLogin}/>)} />
           <Route path="/" render={(props)=>(<Main {...props} isLogin={this.state.isLogin} modalHandle = {this.modalHandle}/>)}/>
         </Switch>
-        {this.state.modal.loginModal?<LoginModal modalHandle = {this.modalHandle}/>:<></>}
-        {this.state.modal.registerModal?<RegisterModal modalHandle = {this.modalHandle}/>:<></>}
+        {this.state.modal.loginModal?<LoginModal modalHandle = {this.modalHandle} postLogin = {ApiServices.postLoginUser} setIsLogin = {this.setIsLogin}/>:<></>}
+        {this.state.modal.registerModal?<RegisterModal modalHandle = {this.modalHandle} postRegister = {ApiServices.postRegisterUser} setIsLogin = {this.setIsLogin}/>:<></>}
         {this.state.modal.donateModal ? <DonateModal modalHandle = {this.modalHandle}/> : <></>}
         {this.state.modal.aproveModal ? <AproveModal modalHandle = {this.modalHandle}/> : <></>}
       </Router>

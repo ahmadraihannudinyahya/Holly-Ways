@@ -4,7 +4,7 @@ import DropDown from './DropDown';
 import './Navbar.css'
 
 function Navbar(props){
-  const {modalHandle,  isLogin} = props;
+  const {modalHandle,  isLogin, setIsLogin} = props;
 
   const [state, setState] = useState({
     dropdownStatus:false,
@@ -34,11 +34,11 @@ function Navbar(props){
     modalHandle('registerModal')
   }
   return (
-  <div className="navbar">
+    <div className="navbar">
       <img src="/Icon.png" alt="icon" onClick = {handleIconClick}/>
       <div>
         {isLogin? <img src="/image/Rectangle12.png" alt="avatar" onClick={togleDropdown}/>: <><button id="login" onClick={handleTogleModalLogin}>Login</button><button id="register" onClick={handleTogleModalRegister}>Register</button> </>}
-        {state.dropdownStatus?<DropDown handleMoveToProfilePage={handleMoveToProfilePage} handleMoveToFundPage={handleMoveToFundPage}/>:<></>}
+        {state.dropdownStatus?<DropDown handleMoveToProfilePage={handleMoveToProfilePage} handleMoveToFundPage={handleMoveToFundPage} togleDropdown = {togleDropdown} setIsLogin = {setIsLogin}/>:<></>}
       </div>
     </div>
   )
