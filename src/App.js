@@ -69,7 +69,7 @@ class App extends Component {
           <Route path="/raisefund" render={props => (<RaiseFund {...props} isLogin={this.state.isLogin} postFund={ApiServices.postFund}/>)} />
           <Route path="/fund/:id" render={(props)=>(<Detail {...props} isLogin ={this.state.isLogin} modalHandle = {this.modalHandle}/>)}/>
           <Route path="/fund" render={props =>(<MyFund {...props} isLogin={this.state.isLogin}/>)} />
-          <Route path="/" render={(props)=>(<Main {...props} isLogin={this.state.isLogin} modalHandle = {this.modalHandle}/>)}/>
+          <Route path="/" render={(props)=>(<Main {...props} isLogin={this.state.isLogin} modalHandle = {this.modalHandle} getAllfund = {ApiServices.getAllfund}/>)}/>
         </Switch>
         {this.state.modal.loginModal?<LoginModal modalHandle = {this.modalHandle} postLogin = {ApiServices.postLoginUser} setIsLogin = {this.setIsLogin}/>:<></>}
         {this.state.modal.registerModal?<RegisterModal modalHandle = {this.modalHandle} postRegister = {ApiServices.postRegisterUser} setIsLogin = {this.setIsLogin}/>:<></>}

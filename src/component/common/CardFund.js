@@ -1,22 +1,23 @@
 import './CardFund.css'
 import Progress from './Progress';
 function CardFund(props){
-  const {id , title, goal_donations, descriton, progres, thumbnail} = props.fund;
+  const {id , title, goal : goal_donations, description, donationObtained, thumbnail} = props.fund;
+  const progres = donationObtained / goal_donations * 100
   const handleClickToDetailPage = e =>{
     e.preventDefault();
     props.movePage(`/fund/${id}`);
   }
   return(
     <div className="cardfund">
-      <img src={thumbnail} alt={title} />
+      <img src={`http://${thumbnail}`} alt={title} />
       <h3>{title}</h3>
-      <p>{descriton}</p>
+      <p>{description}</p>
       <div>
         <Progress value = {progres}/>
       </div>
       <div>
         <div>
-          <p>{goal_donations}</p>
+          <p>Rp. {goal_donations}</p>
         </div>
         <div>
           <button onClick={handleClickToDetailPage}>Donate</button>

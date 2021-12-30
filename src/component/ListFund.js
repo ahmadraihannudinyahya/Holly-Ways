@@ -10,18 +10,18 @@ class ListFund extends Component{
     this.fetchFundlistServices = props.fetchFundlistServices;
     this.movePage = props.movePage;
   }
-  componentDidMount(){
-    const fundList = this.fetchFundlistServices()
-    this.setState({fundList})
+  async componentDidMount(){
+    const fundList = await this.fetchFundlistServices();
+    this.setState({fundList});
   }
   render() {
     return (
       <div className="listfund" id='listfund'>
       <h2>Donate Now</h2>
-      <div className="listcontainer">
-        {this.state.fundList.map( fund => <CardFund key={fund.id} fund={fund} movePage={this.movePage}/> )}
+        <div className="listcontainer">
+          {this.state.fundList.map( fund => <CardFund key={fund.id} fund={fund} movePage={this.movePage}/> )}
+        </div>
       </div>
-    </div>
     );
   }
 }
