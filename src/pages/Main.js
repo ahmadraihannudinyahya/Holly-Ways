@@ -23,6 +23,7 @@ class Main extends Component{
       return response.data.data.funds
     } catch (error) {
       console.log(error);
+      return []
     }
   }
   render(){

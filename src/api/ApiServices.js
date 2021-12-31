@@ -21,6 +21,31 @@ const ApiServices  = {
         'Content-Type' : 'multipart/form-data,'
       }
     })
+  },
+  getFundByFundId : async (id) =>{
+    return api.get(`/fund/${id}`);
+  },
+  postDonation : async (fundId, formData) =>{
+    return api.post(`/donation/fund/${fundId}`, formData, {
+      headers : {
+        Authorization :  `bearer ${localStorage.getItem('token')}`,
+        'Content-Type' : 'multipart/form-data,'
+      }
+    })
+  },
+  getDonationByFundId : async (fundId) =>{
+    return api.get(`/donation/fund/${fundId}`, {
+      headers : {
+        Authorization :  `bearer ${localStorage.getItem('token')}`,
+      }
+    })
+  },
+  patchDonationById: async ({donationId, fundId}) =>{
+    return api.patch(`/donation/${donationId}/fund/${fundId}`,{}, {
+      headers : {
+        Authorization :  `bearer ${localStorage.getItem('token')}`,
+      }
+    })
   }
 }
 export default ApiServices;
