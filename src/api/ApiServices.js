@@ -60,6 +60,13 @@ const ApiServices  = {
         Authorization :  `bearer ${localStorage.getItem('token')}`,
       },
     });
+  },
+  getUserLoginFund : async ()=>{
+    return api.get('/myfund', {
+      headers : {
+        Authorization :  `bearer ${localStorage.getItem('token')}`,
+      },
+    });
   }
 }
 export default ApiServices;

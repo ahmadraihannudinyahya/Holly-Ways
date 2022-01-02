@@ -46,14 +46,15 @@ class Detail extends Component{
     };
     const {id} = (this.props.match.params);
     this.setState({fundId : id});
-    await this.fetchFundById(id)
-    await this.fetchDonationByFundId(id);
+    this.fetchFundById(id)
+    this.fetchDonationByFundId(id);
   }
   async handlePostDonation(formData, setAlert){
     try {
       await this.postDonation(this.state.fundId, formData);
       await this.fetchFundById(this.state.fundId);
       this.setModal();
+      this.props.history.push('/profile');
     } catch (error) {
       if(error.response){
         setAlert(error.response.data.message);
@@ -87,8 +88,14 @@ class Detail extends Component{
     try {
       await this.patchDonationById({fundId : this.state.fundId, donationId : this.state.donationId});
       this.setModal();
+      this.setState({
+        donations : null,
+        fund : null,
+      })
+      this.fetchFundById(this.state.fundId)
+      this.fetchDonationByFundId(this.state.fundId);
     } catch (error) {
-      console.log(error.response.data.message);
+      console.log(error);
     }
   }
   render() {

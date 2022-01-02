@@ -11,7 +11,6 @@ function DonorColomn(props){
     id,
     createdAt
   } = props
-  console.log(props);
   const handleAproveModal = () =>{
     handleModal('aproveModal', id);
   }

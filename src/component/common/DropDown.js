@@ -1,7 +1,9 @@
-import './DropDown.css'
+import { useHistory } from 'react-router';
+import './DropDown.css';
 
 function DropDown(props){
   const {handleMoveToProfilePage, handleMoveToFundPage, togleDropdown, setIsLogin} = props;
+  const history = useHistory();
   const handleProfileClick =(e)=>{
     e.preventDefault();
     handleMoveToProfilePage();
@@ -17,6 +19,7 @@ function DropDown(props){
     localStorage.removeItem('token');
     togleDropdown();
     setIsLogin();
+    history.push('/')
   }
   return(
     <div className="dropdown-menu">

@@ -2,8 +2,7 @@ import DonorColomn from './common/DonorColomn'
 import './ProfieComponent.css'
 
 function ProfileComponent(props){
-  console.log(props.donations);
-  const donationsEll = props.donations.map(donation => <DonorColomn isOwner={true} {...donation} fullname = {donation.fundTitle}/>)
+  const donationsEll = props.donations.map(donation => <DonorColomn key ={donation.id}isOwner={true} {...donation} fullname = {donation.fundTitle}/>)
   if(props.profile){
     return (
       <div className="ProfieComponent">

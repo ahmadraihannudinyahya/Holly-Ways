@@ -29,30 +29,34 @@ class DonorFunds extends Component{
       if(this.state.approvedDonations.length === 0){
         return (<></>);
       }
-      return this.state.approvedDonations.map(donation => <DonorColomn {...donation} key={donation.id}/>)
+      return (
+        <div className="donorfunds">
+          <h2>List Donation (200)</h2>
+          <div>
+            {this.state.approvedDonations.map(donation => <DonorColomn {...donation} createdAt = {donation.postAt} key={donation.id}/>)}
+            <p>Load Mode</p>
+          </div>
+        </div>
+      )
     }
     const disapproveDonationsEll = () =>{
       if(this.state.disapproveDonations.length === 0){
         return (<></>);
       }
-      return this.state.disapproveDonations.map(donation => <DonorColomn key={donation.id} {...donation} isAproved={false} handleModal={this.handleModal}/>)
-    }
-    return(
-      <div className = "donationlist">
-        <div className="donorfunds">
-          <h2>List Donation (200)</h2>
-          <div>
-            {approvedDonationsEll()}
-            <p>Load Mode</p>
-          </div>
-        </div>
+      return (
         <div className="donorfunds">
         <h2>Donation has not been approved (10)</h2>
           <div>
-            {disapproveDonationsEll()}
+            {this.state.disapproveDonations.map(donation => <DonorColomn key={donation.id} {...donation} isAproved={false} handleModal={this.handleModal}/>)}
             <p>Load Mode</p>
           </div>
         </div>
+      )
+    }
+    return(
+      <div className = "donationlist">
+        {approvedDonationsEll()}
+        {disapproveDonationsEll()}
       </div>
     )
   }

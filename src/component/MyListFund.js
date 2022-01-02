@@ -2,8 +2,7 @@ import CardFund from './common/CardFund';
 import './MyListFund.css'
 
 function MyListFund(props){
-  const {fetchMyFundlistServices, movePage}= props;
-  const listFund = fetchMyFundlistServices();
+  const {listFund, movePage}= props;
   const hanleClikRaiseFund = (e) =>{
     e.preventDefault();
     movePage('/raisefund');

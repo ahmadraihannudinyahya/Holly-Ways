@@ -4,42 +4,37 @@ import MyListFund from "../component/MyListFund";
 class MyFund extends Component{
   constructor(props){
     super();
+    this.state = {
+      listFund : null,
+    }
     this.props = props;
     this.movePage = this.movePage.bind(this);
     this.fetchMyFundlistServices = this.fetchMyFundlistServices.bind(this);
   }
-  componentDidMount(){
+
+  async componentDidMount(){
     if(!this.props.isLogin){
       this.props.history.push('/');
     }
+    await this.fetchMyFundlistServices()
   }
   movePage(page){
     this.props.history.push(page);
   }
-  fetchMyFundlistServices(){
-    return [
-      {
-        id:'gsdjjasdb',
-        title : 'The Strength of a People. Power of Community',
-        goal_donations : '25.000.0000',
-        descriton : 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-        progres : '30',
-        thumbnail : '/image/Rectangle7.png',
-      },
-      {
-        id:'sdgsg',
-        title : 'The Strength of a People. Power of Community',
-        goal_donations : '25.000.0000',
-        descriton : 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-        progres : '30',
-        thumbnail : '/image/Rectangle7.png',
-      }
-    ]
+
+  async fetchMyFundlistServices(){
+    try {
+      const response = await this.props.getUserLoginFund();
+      this.setState({listFund : response.data.data.funds});
+    } catch (error) {
+      console.log(error);
+    }
   }
+
   render(){
     return(
       <>
-        <MyListFund fetchMyFundlistServices={this.fetchMyFundlistServices} movePage={this.movePage}/>
+      {this.state.listFund? <MyListFund listFund={this.state.listFund} movePage={this.movePage}/> : <></>}
       </>
     )
   }
