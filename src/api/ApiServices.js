@@ -44,8 +44,22 @@ const ApiServices  = {
     return api.patch(`/donation/${donationId}/fund/${fundId}`,{}, {
       headers : {
         Authorization :  `bearer ${localStorage.getItem('token')}`,
-      }
+      },
     })
+  },
+  getProfileUserLogin: async () =>{
+    return api.get('/profil', {
+      headers : {
+        Authorization :  `bearer ${localStorage.getItem('token')}`,
+      },
+    })
+  },
+  getUserLoginDonations : async ()=>{
+    return api.get('/mydonation', {
+      headers : {
+        Authorization :  `bearer ${localStorage.getItem('token')}`,
+      },
+    });
   }
 }
 export default ApiServices;
