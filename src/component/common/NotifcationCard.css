@@ -1,0 +1,11 @@
+.notifcationCard {
+  background-color: #c32424;
+  border-radius: 10px;
+}
+.notifcationHeader {
+  border-bottom: 2px solid #fff;
+  padding: 10px;
+}
+.notifcationContent {
+  padding: 10px;
+}

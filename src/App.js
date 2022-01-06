@@ -10,6 +10,7 @@ import EditFund from "./pages/EditFund";
 import Navbar from "./component/common/Navbar";
 import LoginModal from "./component/common/LoginModal";
 import RegisterModal from "./component/common/RegisterModal";
+import NotificationContainer from './component/NotificationContainer';
 
 class App extends Component {
   constructor(){
@@ -63,6 +64,7 @@ class App extends Component {
         </Switch>
         {this.state.modal.loginModal?<LoginModal modalHandle = {this.modalHandle} postLogin = {ApiServices.postLoginUser} setIsLogin = {this.setIsLogin}/>:<></>}
         {this.state.modal.registerModal?<RegisterModal modalHandle = {this.modalHandle} postRegister = {ApiServices.postRegisterUser} setIsLogin = {this.setIsLogin}/>:<></>}
+        <NotificationContainer />
       </Router>
     );
   }

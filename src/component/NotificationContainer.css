@@ -1,0 +1,15 @@
+.notificationContainer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  max-height: 60vh;
+  width: 30%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column-reverse;
+  overflow: auto;
+  gap: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  color: #fff;
+}
