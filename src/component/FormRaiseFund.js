@@ -4,14 +4,14 @@ import './FormRaiseFund.css'
 function FormRaiseFund(props){
   const {postFund } = props;
   const [state, setState] = useState({
-    alert : null,
     isLoading : false, 
     description : '',
     title : '',
     goal : '',
   });
+  const [alert , setStateAlert] = useState(null);
   const setAlert = (message) =>{
-    setState({...state, alert : message});
+    setStateAlert(message);
   }
   const handleChange = (e) =>{
     setState({...state, [e.target.name] : e.target.value});
@@ -24,7 +24,7 @@ function FormRaiseFund(props){
         goal : props.fund.goal
       });
     }
-  }, [props])
+  }, [props, alert])
   const handleSubmitClick = async (e) =>{
     e.preventDefault()
     const descriptionEll = e.target.parentElement.previousElementSibling;
@@ -46,7 +46,7 @@ function FormRaiseFund(props){
   return(
     <form action="" className="formraisefund">
       <h2>Make Raise Fund</h2>
-      {state.alert? <span>{state.alert}</span>: <></>}
+      {alert? <span>{alert}</span>: <></>}
       <input type="text" placeholder="Title" name='title' onChange ={handleChange} value = {state.title}/>
       <label htmlFor="thumbnail">Attache Thumbnail</label>
       <input type="file" id="thumbnail" style={{display:"none"}}/>
