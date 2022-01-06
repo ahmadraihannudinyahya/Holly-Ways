@@ -10,6 +10,7 @@ class FundDetail extends Component{
     this.modalHandle = props.modalHandle;
     this.handleTogleDonateModal = this.handleTogleDonateModal.bind(this);
     this.handleClickEdit = this.handleClickEdit.bind(this);
+    this.handleClickCloseFund = this.handleClickCloseFund.bind(this);
   }
   handleTogleDonateModal(e){
     e.preventDefault();
@@ -18,6 +19,10 @@ class FundDetail extends Component{
   handleClickEdit(e){
     e.preventDefault()
     this.movePage(`/editfund/${this.fund.id}`);
+  }
+  async handleClickCloseFund(e){
+    e.preventDefault();
+    await this.props.closeFund(this.fund.id);
   }
   render(){
     if(!this.fund){
@@ -45,11 +50,13 @@ class FundDetail extends Component{
               <p><b>150</b> More Day</p>
             </div>
             <p>{this.fund.description}</p>
-            <button onClick={this.handleTogleDonateModal}>Donate</button>
-            {this.props.isOwner ? <div>
-              <button onClick = {this.handleClickEdit}>Edit</button>
-              <button >Close Fund</button>
-            </div>: <></>}
+            {this.fund.status === 'open' ? <>
+              <button onClick={this.handleTogleDonateModal}>Donate</button>
+              {this.props.isOwner ? <div>
+                <button onClick = {this.handleClickEdit}>Edit</button>
+                <button onClick = {this.handleClickCloseFund}>Close Fund</button>
+              </div>: <></>}
+            </>:<></>}
           </div>
         </div>
       </div>

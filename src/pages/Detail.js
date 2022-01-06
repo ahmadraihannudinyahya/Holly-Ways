@@ -27,6 +27,7 @@ class Detail extends Component{
     this.getDonationAproveModal = this.getDonationAproveModal.bind(this);
     this.handleAprove = this.handleAprove.bind(this);
     this.movePage = this.movePage.bind(this);
+    this.handleCloseFund = this.handleCloseFund.bind(this);
   }
   setModal(type, donationId){
     this.setState({
@@ -106,10 +107,24 @@ class Detail extends Component{
       console.log(error);
     }
   }
+
+  async handleCloseFund(fundId){
+    try {
+      await this.props.ApiServices.deleteFund(fundId);
+      this.setState({
+        donations : null,
+        fund : null,
+      })
+      this.fetchFundById(this.state.fundId)
+      this.fetchDonationByFundId(this.state.fundId);
+    } catch (error) {
+      console.log(error);
+    }
+  }
   render() {
     return (
       <>
-        {this.state.fund? <FundDetail fund = {this.state.fund} isOwner = {this.state.isOwner} modalHandle = {this.setModal} movePage ={this.movePage}/> : <></> }
+        {this.state.fund? <FundDetail fund = {this.state.fund} isOwner = {this.state.isOwner} modalHandle = {this.setModal} movePage ={this.movePage} closeFund = {this.handleCloseFund}/> : <></> }
         {this.state.donations ? <DonorFunds donations ={this.state.donations} modalHandle ={this.setModal}/> : <></>}
         {this.state.donateModal ? <DonateModal modalHandle = {this.setModal} postDonation = {this.handlePostDonation}/> : <></>}
         {this.state.approveModal ? <AproveModal modalHandle = {this.setModal} getDonationContent = {this.getDonationAproveModal} handleAprove = {this.handleAprove}/> : <></>}

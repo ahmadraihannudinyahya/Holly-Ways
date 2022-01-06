@@ -74,6 +74,13 @@ const ApiServices  = {
         Authorization :  `bearer ${localStorage.getItem('token')}`,
       },
     })
+  },
+  deleteFund : async (fundId)=>{
+    return api.delete(`fund/${fundId}`, {
+      headers : {
+        Authorization :  `bearer ${localStorage.getItem('token')}`,
+      },
+    })
   }
 }
 export default ApiServices;
