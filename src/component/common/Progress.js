@@ -2,7 +2,7 @@ import React from 'react';
 import './Progress.css'
 
 function Progress(props){
-  const {value} = props;
+  const value = props.value > 100?100 :props.value;
   const width = `${value}%`
   return(
     <div className="progres-container">

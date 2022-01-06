@@ -46,7 +46,7 @@ class FundDetail extends Component{
             </div>
             <p>{this.fund.description}</p>
             <button onClick={this.handleTogleDonateModal}>Donate</button>
-            {this.fund.isOwner ? <div>
+            {this.props.isOwner ? <div>
               <button onClick = {this.handleClickEdit}>Edit</button>
               <button >Close Fund</button>
             </div>: <></>}

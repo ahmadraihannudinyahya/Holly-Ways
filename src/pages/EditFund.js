@@ -27,9 +27,9 @@ class EditFund extends Component{
       console.log(error);
     }
   }
-  async handlePostFund(newFund, setAlert){
+  async handlePostFund(editFund, setAlert){
     try {
-      await this.props.postFund(newFund);
+      await this.props.patchFund(editFund, this.state.fund.id);
       this.props.history.push('/fund')
     } catch (error) {
       if(error.response){

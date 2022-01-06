@@ -6,7 +6,10 @@ function CardFund(props){
   const progres = donationObtained / goal_donations * 100
   const handleClickToDetailPage = e =>{
     e.preventDefault();
-    props.movePage(`/fund/${id}`);
+    props.movePage({
+      pathname : `/fund/${id}`,
+      state : {isOwner}  
+    });
   }
   return(
     <div className="cardfund">

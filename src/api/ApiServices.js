@@ -67,6 +67,13 @@ const ApiServices  = {
         Authorization :  `bearer ${localStorage.getItem('token')}`,
       },
     });
+  },
+  patchFund : async (editFund,fundId) =>{
+    return api.patch(`/fund/${fundId}`, editFund, {
+      headers : {
+        Authorization :  `bearer ${localStorage.getItem('token')}`,
+      },
+    })
   }
 }
 export default ApiServices;

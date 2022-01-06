@@ -14,6 +14,7 @@ class Detail extends Component{
       donationId : null,
       donateModal : false,
       approveModal : false,
+      isOwner : false,
     }
     this.props = props;
     this.getFundByFundId = props.ApiServices.getFundByFundId
@@ -48,6 +49,9 @@ class Detail extends Component{
     if(!this.props.isLogin){
       this.props.history.push('/');
     };
+    this.setState({
+      isOwner : this.props.location.state.isOwner
+    })
     const {id} = (this.props.match.params);
     this.setState({fundId : id});
     this.fetchFundById(id)
@@ -105,7 +109,7 @@ class Detail extends Component{
   render() {
     return (
       <>
-        {this.state.fund? <FundDetail fund = {this.state.fund} modalHandle = {this.setModal} movePage ={this.movePage}/> : <></> }
+        {this.state.fund? <FundDetail fund = {this.state.fund} isOwner = {this.state.isOwner} modalHandle = {this.setModal} movePage ={this.movePage}/> : <></> }
         {this.state.donations ? <DonorFunds donations ={this.state.donations} modalHandle ={this.setModal}/> : <></>}
         {this.state.donateModal ? <DonateModal modalHandle = {this.setModal} postDonation = {this.handlePostDonation}/> : <></>}
         {this.state.approveModal ? <AproveModal modalHandle = {this.setModal} getDonationContent = {this.getDonationAproveModal} handleAprove = {this.handleAprove}/> : <></>}
