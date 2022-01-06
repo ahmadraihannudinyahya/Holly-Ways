@@ -18,7 +18,7 @@ function MyListFund(props){
         </div>
       </div>
       <div>
-        {listFund.map(fund =><CardFund key={fund.id} fund={fund} movePage={movePage}/>)}
+        {listFund.map(fund =><CardFund key={fund.id} fund={fund} isOwner = {true} movePage={movePage}/>)}
       </div>
     </div>
   )

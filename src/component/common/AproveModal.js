@@ -27,7 +27,7 @@ function AproveModal(props){
         <div className="modal">
           <h3>{state.donation[0].fullname}</h3>
           <p>Rp.{state.donation[0].donateAmount}</p>
-          <img src={`http://${state.donation[0].proofAttachment}`} alt="Payment" />
+          <img src={state.donation[0].proofAttachment} alt="Payment" />
           <button onClick = {handleClickAprove}>Approve</button>
         </div>
       </div>

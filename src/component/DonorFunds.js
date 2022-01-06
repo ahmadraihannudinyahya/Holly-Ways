@@ -31,7 +31,7 @@ class DonorFunds extends Component{
       }
       return (
         <div className="donorfunds">
-          <h2>List Donation (200)</h2>
+          <h2>List Donation ({this.state.approvedDonations.length})</h2>
           <div>
             {this.state.approvedDonations.map(donation => <DonorColomn {...donation} createdAt = {donation.postAt} key={donation.id}/>)}
             <p>Load Mode</p>
@@ -45,7 +45,7 @@ class DonorFunds extends Component{
       }
       return (
         <div className="donorfunds">
-        <h2>Donation has not been approved (10)</h2>
+        <h2>Donation has not been approved ({this.state.disapproveDonations.length})</h2>
           <div>
             {this.state.disapproveDonations.map(donation => <DonorColomn key={donation.id} {...donation} isAproved={false} handleModal={this.handleModal}/>)}
             <p>Load Mode</p>

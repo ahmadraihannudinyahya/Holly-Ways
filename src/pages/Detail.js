@@ -15,16 +15,17 @@ class Detail extends Component{
       donateModal : false,
       approveModal : false,
     }
+    this.props = props;
     this.getFundByFundId = props.ApiServices.getFundByFundId
     this.postDonation = props.ApiServices.postDonation;
     this.getDonationByFundId = props.ApiServices.getDonationByFundId;
     this.patchDonationById = props.ApiServices.patchDonationById;
-    this.props = props;
     this.fetchFundById = this.fetchFundById.bind(this);
     this.setModal = this.setModal.bind(this);
     this.handlePostDonation = this.handlePostDonation.bind(this);
     this.getDonationAproveModal = this.getDonationAproveModal.bind(this);
     this.handleAprove = this.handleAprove.bind(this);
+    this.movePage = this.movePage.bind(this);
   }
   setModal(type, donationId){
     this.setState({
@@ -39,6 +40,9 @@ class Detail extends Component{
       this.setState({approveModal : true});
       this.setState({donationId : donationId});
     }
+  }
+  movePage(page){
+    this.props.history.push(page);
   }
   async componentDidMount(){
     if(!this.props.isLogin){
@@ -101,7 +105,7 @@ class Detail extends Component{
   render() {
     return (
       <>
-        {this.state.fund?<FundDetail fund = {this.state.fund} modalHandle = {this.setModal}/> : <></> }
+        {this.state.fund? <FundDetail fund = {this.state.fund} modalHandle = {this.setModal} movePage ={this.movePage}/> : <></> }
         {this.state.donations ? <DonorFunds donations ={this.state.donations} modalHandle ={this.setModal}/> : <></>}
         {this.state.donateModal ? <DonateModal modalHandle = {this.setModal} postDonation = {this.handlePostDonation}/> : <></>}
         {this.state.approveModal ? <AproveModal modalHandle = {this.setModal} getDonationContent = {this.getDonationAproveModal} handleAprove = {this.handleAprove}/> : <></>}

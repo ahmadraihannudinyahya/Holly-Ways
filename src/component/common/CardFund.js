@@ -1,7 +1,8 @@
 import './CardFund.css'
 import Progress from './Progress';
 function CardFund(props){
-  const {id , title, goal : goal_donations, description, donationObtained, thumbnail} = props.fund;
+  const {id , title, goal : goal_donations, description, donationObtained, thumbnail } = props.fund;
+  const {isOwner = false} = props;
   const progres = donationObtained / goal_donations * 100
   const handleClickToDetailPage = e =>{
     e.preventDefault();
@@ -9,7 +10,7 @@ function CardFund(props){
   }
   return(
     <div className="cardfund">
-      <img src={`http://${thumbnail}`} alt={title} />
+      <img src={thumbnail} alt={title} />
       <h3>{title}</h3>
       <p>{description}</p>
       <div>
@@ -20,7 +21,7 @@ function CardFund(props){
           <p>Rp. {goal_donations}</p>
         </div>
         <div>
-          <button onClick={handleClickToDetailPage}>Donate</button>
+          {isOwner ? <button onClick={handleClickToDetailPage}>View Fund</button> :<button onClick={handleClickToDetailPage}>Donate</button>}
         </div>
       </div>
     </div>

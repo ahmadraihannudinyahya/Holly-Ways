@@ -44,7 +44,6 @@ class RegisterModal extends Component{
         email : emailEll.value,
         password : passwordEll.value
       });
-      this.setState({isLoading : false})
       localStorage.setItem('token', response.data.data.user.token);
       this.setIsLogin(true);
       this.modalHandle();
@@ -67,7 +66,7 @@ class RegisterModal extends Component{
               <input type="email" placeholder="Email" />
               <input type="password" placeholder="Password"/>
               <input type="text" placeholder="Fullname"/>
-              <button onClick = {this.handleRegister}>Register</button>
+              <button onClick = {this.handleRegister} disabled = {this.state.isLoading}>Register</button>
               <p>Already have an account ? <b onClick={this.handleSwitchModal}>Klik Here</b></p>
             </form>
           </div>

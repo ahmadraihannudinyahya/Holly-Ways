@@ -6,6 +6,7 @@ import Detail from "./pages/Detail";
 import Profile from "./pages/Profile";
 import MyFund from "./pages/MyFund";
 import RaiseFund from "./pages/RaiseFund";
+import EditFund from "./pages/EditFund";
 import Navbar from "./component/common/Navbar";
 import LoginModal from "./component/common/LoginModal";
 import RegisterModal from "./component/common/RegisterModal";
@@ -55,6 +56,7 @@ class App extends Component {
         <Switch>
           <Route path="/profile" render={props => (<Profile {...props} isLogin={this.state.isLogin} modalHandle = {this.modalHandle} {...ApiServices}/>)} />
           <Route path="/raisefund" render={props => (<RaiseFund {...props} isLogin={this.state.isLogin} postFund={ApiServices.postFund}/>)} />
+          <Route path="/editfund/:id" render={props => (<EditFund {...props} isLogin={this.state.isLogin} postFund={ApiServices.postFund} getFundById = {ApiServices.getFundByFundId}/>)} />
           <Route path="/fund/:id" render={(props)=>(<Detail {...props} isLogin ={this.state.isLogin} modalHandle = {this.modalHandle} ApiServices = {ApiServices}/>)}/>
           <Route path="/fund" render={props =>(<MyFund {...props} isLogin={this.state.isLogin} {...ApiServices}/>)} />
           <Route path="/" render={(props)=>(<Main {...props} isLogin={this.state.isLogin} modalHandle = {this.modalHandle} getAllfund = {ApiServices.getAllfund}/>)}/>
