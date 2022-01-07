@@ -1,13 +1,13 @@
 import './NotifcationCard.css'
 
-function NotifcationCard(){
+function NotifcationCard(props){
   return(
     <div className="notifcationCard">
       <div  className="notifcationHeader">
         <h3>Notification</h3>
       </div>
       <div className="notifcationContent">
-        <p>Ahmad Yahya Has Donate Penggalangan Dana Untuk Anak Yatim</p>
+        <p>{props.message}</p>
       </div>
     </div>
   )
