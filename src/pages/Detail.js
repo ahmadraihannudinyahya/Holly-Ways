@@ -111,10 +111,6 @@ class Detail extends Component{
   async handleCloseFund(fundId){
     try {
       await this.props.ApiServices.deleteFund(fundId);
-      this.setState({
-        donations : null,
-        fund : null,
-      })
       this.fetchFundById(this.state.fundId)
       this.fetchDonationByFundId(this.state.fundId);
     } catch (error) {

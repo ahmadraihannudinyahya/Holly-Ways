@@ -47,7 +47,7 @@ class FundDetail extends Component{
             <Progress value={progres}/>
             <div>
               <p><b>{this.fund.donationCount}</b> Donation</p>
-              <p><b>150</b> More Day</p>
+              <p>{this.fund.postAt}</p>
             </div>
             <p>{this.fund.description}</p>
             {this.fund.status === 'open' ? <>
