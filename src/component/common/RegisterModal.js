@@ -66,7 +66,9 @@ class RegisterModal extends Component{
               <input type="email" placeholder="Email" />
               <input type="password" placeholder="Password"/>
               <input type="text" placeholder="Fullname"/>
-              <button onClick = {this.handleRegister} disabled = {this.state.isLoading}>Register</button>
+              <button onClick = {this.handleRegister} disabled = {this.state.isLoading}>
+              {this.state.isLoading ? 'Loading...' : 'Register' }
+              </button>
               <p>Already have an account ? <b onClick={this.handleSwitchModal}>Klik Here</b></p>
             </form>
           </div>

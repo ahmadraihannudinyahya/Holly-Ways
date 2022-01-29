@@ -1,29 +1,29 @@
 import DonorColomn from './common/DonorColomn'
 import './ProfieComponent.css'
 
-function ProfileComponent(props){
-  const donationsEll = props.donations.map(donation => <DonorColomn key ={donation.id}isOwner={true} {...donation} fullname = {donation.fundTitle}/>)
-  if(props.profile){
+function ProfileComponent({donations, profile}){
+  const donationsEll = donations.map(donation => <DonorColomn key ={donation.id}isOwner={true} {...donation} fullname = {donation.fundTitle}/>)
+  if(profile){
     return (
       <div className="ProfieComponent">
         <div className="myprofile">
           <h2>My Profile</h2>
           <div>
             <div>
-              <img src="/image/Rectangle12.png" alt="profile" />
+              <img src={profile.image?profile.image:"/image/profile.png"} alt="profile" />
             </div>
             <div>
               <div>
                 <h4>Full Name</h4>
-                <p>{props.profile.fullname}</p>
+                <p>{profile.fullname}</p>
               </div>
               <div>
                 <h4>Email</h4>
-                <p>{props.profile.email}</p>
+                <p>{profile.email}</p>
               </div>
               <div>
                 <h4>Phone</h4>
-                <p>083896833122</p>
+                <p>{profile.phone?profile.phone:'-'}</p>
               </div>
             </div>
           </div>

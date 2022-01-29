@@ -4,6 +4,7 @@ import './AproveModal.css'
 function AproveModal(props){
   const {modalHandle, getDonationContent, handleAprove} = props;
   const [state, setState] = useState({donation : null})
+  const [isLoading, setIsLoading] = useState(false);
   const setDonations=()=>{
     setState({
       donation : getDonationContent(),
@@ -18,6 +19,7 @@ function AproveModal(props){
     }
   }
   const handleClickAprove = (e) =>{
+    setIsLoading(true);
     e.preventDefault();
     handleAprove()
   }
@@ -28,7 +30,9 @@ function AproveModal(props){
           <h3>{state.donation[0].fullname}</h3>
           <p>Rp.{state.donation[0].donateAmount}</p>
           <img src={state.donation[0].proofAttachment} alt="Payment" />
-          <button onClick = {handleClickAprove}>Approve</button>
+          <button onClick = {handleClickAprove} disabled={isLoading}>
+            {isLoading ? 'Loading...' : 'Approve'}
+          </button>
         </div>
       </div>
     )

@@ -53,7 +53,9 @@ class LoginModal extends Component{
           {this.state.alert? <span>{this.state.alert}</span>:<></>}
           <input type="email" placeholder="Email" />
           <input type="password" placeholder="Password"/>
-          <button onClick = {this.handleLogin} disabled = {this.state.isLoading}>Login</button>
+          <button onClick = {this.handleLogin} disabled = {this.state.isLoading}>
+            {this.state.isLoading ? 'Loading...' : 'Login'}
+          </button>
           <p>Don't have an account ? <b onClick={this.handleSwitchModal}>Klik Here</b></p>
         </form>
       </div>

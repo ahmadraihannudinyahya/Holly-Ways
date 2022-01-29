@@ -12,18 +12,22 @@ class NotificationContainer extends Component{
     }
   };
   componentDidMount(){
-    this.socket = io('http://192.168.56.101:5000');
-    this.socket.connect();
-    this.socket.on('connection_error', (error)=>{
-      console.log(error);
-    });
-    this.socket.on('message', (message)=>{
-      this.setState({notification : [...this.state.notification, message]});
-      this.setTimeNotification();
-    })
+    if(process.env.SOCKET_IO_URL){
+      this.socket = io(process.env.SOCKET_IO_URL);
+      this.socket.connect();
+      this.socket.on('connection_error', (error)=>{
+        console.log(error);
+      });
+      this.socket.on('message', (message)=>{
+        this.setState({notification : [...this.state.notification, message]});
+        this.setTimeNotification();
+      })
+    }
   };
   componentWillUnmount(){
-    this.socket.disconnect();
+    if(this.socket){
+      this.socket.disconnect();
+    }
   };
   setTimeNotification(){
     if(this.state.notification.length === 1){

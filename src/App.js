@@ -53,7 +53,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <Navbar isLogin = {this.state.isLogin} modalHandle = {this.modalHandle} setIsLogin = {this.setIsLogin}/>
+        <Navbar isLogin = {this.state.isLogin} modalHandle = {this.modalHandle} setIsLogin = {this.setIsLogin} getProfile = {ApiServices.getProfileUserLogin}/>
         <Switch>
           <Route path="/profile" render={props => (<Profile {...props} isLogin={this.state.isLogin} modalHandle = {this.modalHandle} {...ApiServices}/>)} />
           <Route path="/raisefund" render={props => (<RaiseFund {...props} isLogin={this.state.isLogin} postFund={ApiServices.postFund}/>)} />

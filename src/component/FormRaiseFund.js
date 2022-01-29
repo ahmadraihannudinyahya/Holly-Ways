@@ -26,6 +26,7 @@ function FormRaiseFund(props){
     }
   }, [props, alert])
   const handleSubmitClick = async (e) =>{
+    setState({...state, isLoading : true});
     e.preventDefault()
     const descriptionEll = e.target.parentElement.previousElementSibling;
     const goalDonationEll = descriptionEll.previousElementSibling;
@@ -39,7 +40,6 @@ function FormRaiseFund(props){
     if(fileSelector.files[0]){
       formData.append('thumbnail', fileSelector.files[0]);
     }
-    setState({...state, isLoading : true});
     await postFund(formData, setAlert);
     setState({...state, isLoading : false});
   }
@@ -53,7 +53,9 @@ function FormRaiseFund(props){
       <input type="number" placeholder="Goals Donations" name = 'goal' onChange = {handleChange} value = {state.goal}/>
       <textarea placeholder="Description" name = 'description'onChange ={handleChange} value = {state.description}></textarea>
       <div>
-        <button onClick = {handleSubmitClick} disabled={state.isLoading}>Public Fundraising</button>
+        <button onClick = {handleSubmitClick} disabled={state.isLoading}>
+        {state.isLoading ? 'Loading...' : 'Public Fundraising' }
+        </button>
       </div>
     </form>
   )
