@@ -81,6 +81,14 @@ const ApiServices  = {
         Authorization :  `bearer ${localStorage.getItem('token')}`,
       },
     })
-  }
+  }, 
+  patchProfile : async (formData) => {
+    return api.patch(`/profil`, formData, {
+      headers : {
+        Authorization :  `bearer ${localStorage.getItem('token')}`,
+        'Content-Type' : 'multipart/form-data,'
+      }, 
+    });
+  }, 
 }
 export default ApiServices;

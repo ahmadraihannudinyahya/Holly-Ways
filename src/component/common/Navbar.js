@@ -5,7 +5,7 @@ import './Navbar.css'
 
 function Navbar(props){
   const {modalHandle,  isLogin, setIsLogin} = props;
-  const [profile, setProfile] = useState(null);
+  const [profileImage, setProfileImage] = useState('/image/profile.png');
   const [state, setState] = useState({
     dropdownStatus:false,
   })
@@ -15,13 +15,16 @@ function Navbar(props){
     if(isLogin){
       getProfileImage();
     }else{
-      setProfile(null);
+      setProfileImage('/image/profile.png');
     }
-  }, [isLogin])
-  const getProfileImage = () => {
+  }, [isLogin]);
+
+  const getProfileImage = async () => {
     try {
-      const response = props.getProfile();
-      setProfile(response.data.data.user);
+      const response = await props.getProfile();
+      if(response.data.data.user.image){
+        setProfileImage(response.data.data.user.image);
+      }
     } catch (error) {
       console.log(error);
     }
@@ -30,11 +33,11 @@ function Navbar(props){
     e.preventDefault();
     history.push('/')
     setState(prevState => ({dropdownStatus : false}))
-
   }
   const handleMoveToProfilePage=()=>{
     history.push('/profile')
   }
+
   const handleMoveToFundPage = ()=>{
     history.push('/fund');
   }
@@ -53,7 +56,7 @@ function Navbar(props){
     <div className="navbar">
       <img src="/Icon.png" alt="icon" onClick = {handleIconClick}/>
       <div>
-        {isLogin? <img src="/image/profile.png" alt="avatar" onClick={togleDropdown}/>: <><button id="login" onClick={handleTogleModalLogin}>Login</button><button id="register" onClick={handleTogleModalRegister}>Register</button> </>}
+        {isLogin? <img src={profileImage} alt="avatar" onClick={togleDropdown}/>: <><button id="login" onClick={handleTogleModalLogin}>Login</button><button id="register" onClick={handleTogleModalRegister}>Register</button> </>}
         {state.dropdownStatus?<DropDown handleMoveToProfilePage={handleMoveToProfilePage} handleMoveToFundPage={handleMoveToFundPage} togleDropdown = {togleDropdown} setIsLogin = {setIsLogin}/>:<></>}
       </div>
     </div>

@@ -23,10 +23,10 @@ function DropDown(props){
   }
   return(
     <div className="dropdown-menu">
-      <button onClick={handleProfileClick}><img src='/image/UserIcon.png'/>Profile</button>
-      <button onClick={handleRaiseFundClick}><img src='/image/FundIcon.png'/>Raise Fund</button>
+      <button onClick={handleProfileClick}><img src='/image/UserIcon.png' alt='icon'/>Profile</button>
+      <button onClick={handleRaiseFundClick}><img src='/image/FundIcon.png' alt='icon'/>Raise Fund</button>
       <hr />
-      <button onClick = {handleLogoutClick}><img src='/image/LogoutIcon.png'/>Logout</button>
+      <button onClick = {handleLogoutClick}><img src='/image/LogoutIcon.png' alt='icon'/>Logout</button>
     </div>
   )
 }
