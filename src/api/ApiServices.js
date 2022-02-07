@@ -1,7 +1,7 @@
 import axios from "axios"
 
 const api = axios.create({
-  baseURL : 'https://hollyways.ahmadyahya.site/api/v1', 
+  baseURL : 'https://holly-ways-api.herokuapp.com/api/v1', 
 })
 
 const ApiServices  = {
