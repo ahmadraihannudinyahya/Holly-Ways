@@ -5,14 +5,14 @@ function AproveModal(props){
   const {modalHandle, getDonationContent, handleAprove} = props;
   const [state, setState] = useState({donation : null})
   const [isLoading, setIsLoading] = useState(false);
-  const setDonations=()=>{
+  const setDonations =()=>{
     setState({
       donation : getDonationContent(),
     });
   }
   useEffect(()=>{
     setDonations()
-  },[]);
+  },[setDonations]);
   const handleOffModal =(e)=>{
     if(e.target.classList.contains('aprovemodalbackdrop')){
       modalHandle();

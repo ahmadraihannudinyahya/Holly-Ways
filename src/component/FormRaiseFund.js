@@ -24,7 +24,7 @@ function FormRaiseFund(props){
         goal : props.fund.goal
       });
     }
-  }, [props, alert])
+  }, [props, alert, state])
   const handleSubmitClick = async (e) =>{
     setState({...state, isLoading : true});
     e.preventDefault()

@@ -17,7 +17,7 @@ function Navbar(props){
     }else{
       setProfileImage('/image/profile.png');
     }
-  }, [isLogin]);
+  }, [isLogin, getProfileImage, setProfileImage]);
 
   const getProfileImage = async () => {
     try {
