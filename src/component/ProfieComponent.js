@@ -1,7 +1,7 @@
 import DonorColomn from './common/DonorColomn'
 import './ProfieComponent.css'
 
-function ProfileComponent({donations, profile}){
+function ProfileComponent({donations, profile, modalHandle}){
   const donationsEll = donations.map(donation => <DonorColomn key ={donation.id}isOwner={true} {...donation} fullname = {donation.fundTitle}/>)
   if(profile){
     return (
@@ -25,6 +25,7 @@ function ProfileComponent({donations, profile}){
                 <h4>Phone</h4>
                 <p>{profile.phone?profile.phone:'-'}</p>
               </div>
+              <button onClick={() => modalHandle(true)}>Edit Profile</button>
             </div>
           </div>
         </div>

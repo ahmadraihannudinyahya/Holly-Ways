@@ -19,7 +19,7 @@
 }
 .ProfieComponent > .myprofile > div > div:first-child > img {
   height: 221.79px;
-  width: 190;
+  width: 190px;
   object-fit: cover;
   border-radius: 5px;
 }
@@ -44,6 +44,16 @@
   color: #616161;
   font-size: 18px;
   font-weight: 400;
+}
+.ProfieComponent > .myprofile > div > div:nth-child(2) > button {
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  background-color: #c32424;
+  padding: 10px;
+  color: #fff;
+  font-weight: 900;
+  font-size: 14px;
 }
 .ProfieComponent > .historydonation {
   width: 50%;
